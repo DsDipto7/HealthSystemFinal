@@ -65,7 +65,7 @@ export default function Navbar() {
       <a href="/" className="logo">Logo</a>
       <nav className="navbar">
         <Link to="/">Home</Link>
-        <Link to="/">About</Link>
+        <Link to="/about">About</Link>
         <Link to="/">Product</Link>
         <Link to="/">Service</Link>
         <Link to="/">Contact</Link>
