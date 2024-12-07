@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     "corsheaders",
+    "register",
+    "login"
 
 ]
 
@@ -57,6 +59,17 @@ MIDDLEWARE = [
       "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+}
+
 
 ROOT_URLCONF = "backend.urls"
 
@@ -181,3 +194,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_ALL_ORIGINS=True
+# aita pore add korsi dafa theke dekhe
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React app URL
+]

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify"; // Import Toastify
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Login.css";
 
 const Login = () => {
@@ -172,7 +173,10 @@ const Login = () => {
             <button type="submit" disabled={isLoading}>
               {isLoading ? "Loading..." : "Sign In"}
             </button>
+            <Link to="/loginadmin" className="ghost">Are you an admin?</Link>
           </form>
+          {/* Link to admin login */}
+          
         </div>
 
         {/* Overlay */}
@@ -187,6 +191,7 @@ const Login = () => {
                 Sign In
               </button>
             </div>
+
             <div className="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start your journey with us</p>

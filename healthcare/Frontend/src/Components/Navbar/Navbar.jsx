@@ -69,6 +69,7 @@ export default function Navbar() {
         <Link to="/">Product</Link>
         <Link to="/">Service</Link>
         <Link to="/">Contact</Link>
+        {/* <Link to="/admin">Admin</Link> */}
         {isLoggedIn ? (
   <>
     <span>Hi, {username}!</span>
