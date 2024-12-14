@@ -6,6 +6,7 @@ import About from './Components/About/About';
 
 import Adminlogin from './Components/Admin/loginadmin';
 import Adminregister from './Components/Admin/registeradmin';
+import AdminDashboard from './Components/AdminDashboard/Adminpage';
  // Import PrivateRoute
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,7 +26,7 @@ function App() {
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
         <Route path="/registeradmin" element={<Adminregister />} />
-
+        <Route path="/admindashboard" element={<AdminDashboard />} />
         {/* Protected Route - Wrapped in PrivateRoute */}
         
       </Routes>
