@@ -33,7 +33,7 @@ const Signin = () => {
       );
 
       setTimeout(() => {
-        navigate("/about");
+        navigate("/admindashboard");
       }, 2500);
     } catch (err) {
       const errorMessage =
