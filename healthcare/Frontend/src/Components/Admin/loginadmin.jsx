@@ -24,7 +24,7 @@ const Signin = () => {
         }
       );
 
-      toast.success("Candidate logged in successfully!");
+      toast.success("Admin logged in successfully!");
 
       // Save candidate data to session storage
       sessionStorage.setItem(

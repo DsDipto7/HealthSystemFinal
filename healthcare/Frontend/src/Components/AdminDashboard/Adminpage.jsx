@@ -434,7 +434,7 @@ export default function AdminPage() {
                     <td>{product.productPrice}</td>
                     <td>
                       <img
-                        src={`http://127.0.0.1:8000/media/${product.productImage}`}
+                        src={`http://127.0.0.1:8000 ${product.productImage}`}
                         alt={product.productName}
                         width="50"
                       />
