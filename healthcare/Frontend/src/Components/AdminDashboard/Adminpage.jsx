@@ -274,7 +274,7 @@
 
 
 
-//My Friends Code 
+//My Friends Code   for add product only 
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -433,12 +433,13 @@ export default function AdminPage() {
                     <td>{product.productDescription}</td>
                     <td>{product.productPrice}</td>
                     <td>
-                      <img
-                        src={`http://127.0.0.1:8000 ${product.productImage}`}
-                        alt={product.productName}
-                        width="50"
-                      />
-                    </td>
+  <img
+    src={`http://127.0.0.1:8000/${product.productImage}`} // Removed the space
+    alt={product.productName}
+    width="50"
+  />
+</td>
+
                     <td>
                       <button className="btn btn-warning btn-sm me-2">
                         Edit
@@ -502,3 +503,5 @@ export default function AdminPage() {
   );
 }
 
+
+//for edit and delete product
