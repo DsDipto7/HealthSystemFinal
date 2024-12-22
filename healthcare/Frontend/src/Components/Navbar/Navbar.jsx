@@ -66,7 +66,7 @@ export default function Navbar() {
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/">Product</Link>
+        <Link to="/product">Product</Link>
         <Link to="/">Service</Link>
         <Link to="/">Contact</Link>
         {/* <Link to="/admin">Admin</Link> */}
