@@ -7,6 +7,13 @@ import Product from './Components/Product/Product'
 import Adminlogin from './Components/Admin/loginadmin';
 import Adminregister from './Components/Admin/registeradmin';
 import AdminDashboard from './Components/AdminDashboard/Adminpage';
+//
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"; // Adjust path if necessary
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
+import SetPassword from "./Components/SetPassword/SetPassword";
+
+
+
  // Import PrivateRoute
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,6 +29,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/forget_password" element={<ForgotPassword />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/setpassword" element={<SetPassword />} />
+   
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
