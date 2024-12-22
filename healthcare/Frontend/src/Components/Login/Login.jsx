@@ -174,6 +174,7 @@ const Login = () => {
               {isLoading ? "Loading..." : "Sign In"}
             </button>
             <Link to="/loginadmin" className="ghost">Are you an admin?</Link>
+            <Link to="/forget_password" className="ghost">Forget Password?</Link>
           </form>
           {/* Link to admin login */}
           
