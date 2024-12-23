@@ -7,7 +7,6 @@ import Product from './Components/Product/Product'
 import Adminlogin from './Components/Admin/loginadmin';
 import Adminregister from './Components/Admin/registeradmin';
 import AdminDashboard from './Components/AdminDashboard/Adminpage';
-//
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"; // Adjust path if necessary
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import SetPassword from "./Components/SetPassword/SetPassword";

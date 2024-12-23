@@ -20,6 +20,7 @@ urlpatterns = [
     path("login/", UserLoginAPIView.as_view(), name="login"),
     path("logout/", UserLogoutAPIView.as_view(), name="logout"),
     path("user-info/", UserInfoAPIView.as_view(), name="user-info"),
+    
     path("forgot-password/", ForgotPasswordView.as_view(), name="forgot-password"),
     path("verify-otp/", VerifyOtpView.as_view(), name="verify-otp"),
     path("reset-password/", ResetPasswordView.as_view(), name="reset-password"),
