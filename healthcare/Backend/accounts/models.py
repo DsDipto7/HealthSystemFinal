@@ -36,6 +36,7 @@
 #new code for sending otp and modified models.py
 from datetime import timedelta
 from django.utils.timezone import now
+#eruporergulaage ciloimport  kora 
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 

@@ -37,7 +37,7 @@
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 8px 0;
 }
 
 .login-page button {
@@ -51,6 +51,8 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
+    margin-top: .8rem;
+    margin-bottom: .7rem;
 }
 
 .login-page button:active {

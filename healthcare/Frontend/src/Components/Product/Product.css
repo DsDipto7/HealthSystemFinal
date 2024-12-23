@@ -1,88 +1,196 @@
-/* Container for the Product Page */
-.product-container {
+/* Cart Icon */
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.cart-count {
+    margin-left: 5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 14px;
+}
+
+/* Modal Overlay */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal Content */
+.cart-content {
+    background: white;
     padding: 20px;
-    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cart-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
     text-align: center;
 }
 
-/* Title Styling */
-.product-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+/* Table Styling */
+.cart-content table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-/* Product Row Styling */
+.cart-content table th,
+.cart-content table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-content table th {
+    background: #f7f7f7;
+    font-weight: bold;
+}
+
+.cart-content table td img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.place-order-btn,
+.cancel-order-btn,
+.close-cart-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.place-order-btn {
+    background: #4caf50;
+    color: white;
+    margin-right: 10px;
+}
+
+.cancel-order-btn {
+    background: #f44336;
+    color: white;
+    margin-right: 10px;
+}
+
+.close-cart-btn {
+    background: #555;
+    color: white;
+}
+
+.place-order-btn:hover,
+.cancel-order-btn:hover,
+.close-cart-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Product Card */
+.product-container {
+    padding: 20px;
+}
+
 .product-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
 }
 
-/* Individual Product Card */
 .product-card {
-    width: 200px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 10px;
-    transition: transform 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Product Image */
-.product-image {
-    width: 100%;
-    height: 150px;
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
     object-fit: cover;
-    margin-bottom: 10px;
 }
 
-/* Product Name */
-.product-name {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+.product-card h5 {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-/* Product Details */
-.product-details {
+.product-card p {
     font-size: 14px;
     color: #555;
-    margin-bottom: 10px;
 }
 
-/* Product Price */
-.product-price {
-    font-size: 18px;
-    color: #28a745;
-    /* Greenish Color */
+.product-card .product-price {
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #333;
+    margin: 10px 0;
 }
 
-/* Add to Cart Button */
 .add-to-cart-btn {
-    background-color: #007bff;
+    background: #4caf50;
     color: white;
     border: none;
-    padding: 8px 12px;
-    font-size: 14px;
     border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-    /* Center the button */
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #0056b3;
+    background: #45a049;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-card {
+        width: 100%;
+    }
+
+    .cart-content {
+        width: 95%;
+    }
 }
