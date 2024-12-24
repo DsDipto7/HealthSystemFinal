@@ -15,3 +15,10 @@ def contact_create(request):
             serializer.save()
             return Response({"message": "Contact data saved successfully!"}, status=201)
         return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+def contact_list(request):
+    if request.method == 'GET':
+        contacts = Contact.objects.all()
+        serializer = ContactSerializer(contacts, many=True)
+        return Response(serializer.data, status=200)
