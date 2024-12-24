@@ -3,7 +3,8 @@ import Homepage from './Components/Homepage/Homepage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import About from './Components/About/About';
-import Product from './Components/Product/Product'
+import Product from './Components/Product/Product';
+import Contact from './Components/Contact/Contact';
 import Adminlogin from './Components/Admin/loginadmin';
 import Adminregister from './Components/Admin/registeradmin';
 import AdminDashboard from './Components/AdminDashboard/Adminpage';
@@ -31,7 +32,7 @@ function App() {
         <Route path="/forget_password" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/setpassword" element={<SetPassword />} />
-   
+        <Route path="/contact" element={<Contact/>} />
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />

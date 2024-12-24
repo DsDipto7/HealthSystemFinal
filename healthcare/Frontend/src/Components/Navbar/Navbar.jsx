@@ -67,7 +67,7 @@ export default function Navbar() {
         <Link to="/about">About</Link>
         <Link to="/product">Product</Link>
         <Link to="/">Service</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
         {isLoggedIn ? (
           <>
             <span className="navbar-username">Hi, {username}!</span>

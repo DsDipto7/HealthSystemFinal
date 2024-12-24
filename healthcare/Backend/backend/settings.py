@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "register",
     "login",
     "api",
+    "contact",
 ]
 
 MIDDLEWARE = [
