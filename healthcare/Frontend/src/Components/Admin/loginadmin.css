@@ -5,6 +5,9 @@
     text-decoration: none;
     box-sizing: border-box;
   }
+.text-center{
+  color: #333;
+}
   
   .signin-container {
     /* color: black !important; */

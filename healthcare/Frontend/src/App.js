@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // Example of checking if the user is authenticated
-  const isAuthenticated = !!localStorage.getItem('accessToken'); // You can replace this with your authentication logic
+  // const isAuthenticated = !!localStorage.getItem('accessToken'); // You can replace this with your authentication logic
 
   return (
     <Router>
