@@ -34,7 +34,8 @@ urlpatterns = [
 
     path("candidates/", CandidateView.as_view(), name="candidate-list"),
     path("loginadmin/", CandidateLoginView.as_view(), name="login"),
-    path("api/",include('api.urls'))
+    path("api/",include('api.urls')),
+    path('api/', include('contact.urls')),
 ]
 
 

@@ -1,0 +1,17 @@
+from django.shortcuts import render
+
+# Create your views here.
+# contact/views.py
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .models import Contact
+from .serializers import ContactSerializer
+
+@api_view(['POST'])
+def contact_create(request):
+    if request.method == 'POST':
+        serializer = ContactSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Contact data saved successfully!"}, status=201)
+        return Response(serializer.errors, status=400)
