@@ -11,6 +11,7 @@ import AdminDashboard from './Components/AdminDashboard/Adminpage';
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"; // Adjust path if necessary
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import SetPassword from "./Components/SetPassword/SetPassword";
+import Chat from "./Components/Chat/Chat";
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/setpassword" element={<SetPassword />} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/chat" element={<Chat />} />
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
