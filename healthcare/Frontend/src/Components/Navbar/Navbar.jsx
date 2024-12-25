@@ -61,12 +61,15 @@ export default function Navbar() {
 
   return (
     <header className="header">
-      <a href="/" className="logo">Logo</a>
+      <a href="/" className="logo">
+        Logo
+      </a>
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/product">Product</Link>
         <Link to="/">Service</Link>
+        <Link to="/chat">Chat</Link>
         <Link to="/contact">Contact</Link>
         {isLoggedIn ? (
           <>
