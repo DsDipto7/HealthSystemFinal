@@ -28,3 +28,32 @@ class Cart(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.product.productName} ({self.quantity})"
 
+
+class Service(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='media/')
+
+    def __str__(self):
+        return self.name
+
+
+class Category(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='categories')
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='media/')
+
+    def __str__(self):
+        return self.name
+
+
+class Doctor(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='doctors')
+    name = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='media/')
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.name

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Cart
+from .models import Product, Cart, Service, Category, Doctor
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,6 +22,24 @@ class CartSerializer(serializers.ModelSerializer):
         return round(obj.product.productPrice * obj.quantity, 2)
 
         
+
+class ServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Service
+        fields = '__all__'
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Doctor
+        fields = '__all__'       
+       
         
         
         
