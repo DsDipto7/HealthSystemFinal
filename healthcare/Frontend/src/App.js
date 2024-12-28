@@ -12,6 +12,7 @@ import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"; // Adju
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import SetPassword from "./Components/SetPassword/SetPassword";
 import Chat from "./Components/Chat/Chat";
+import Service from "./Components/Service/Service";
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/setpassword" element={<SetPassword />} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/service" element={<Service/>} />
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />

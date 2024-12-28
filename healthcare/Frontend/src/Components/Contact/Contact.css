@@ -260,3 +260,21 @@ body {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+.speech-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #A294F9;
+    /* Greenish color */
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.speech-btn:hover {
+    opacity: 0.8;
+}

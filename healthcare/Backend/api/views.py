@@ -6,6 +6,9 @@ from django.shortcuts import get_object_or_404
 from .models import Product,Cart
 from .serializers import ProductSerializer
 from .serializers import CartSerializer
+from .models import Service, Category, Doctor
+from .serializers import ServiceSerializer, CategorySerializer, DoctorSerializer
+
 
 @api_view(['GET'])
 def get_products(request):
@@ -112,3 +115,100 @@ def remove_from_cart(request, cart_id):
         cart_item.delete()
         return Response({"message": "Product removed from cart successfully!"}, status=status.HTTP_204_NO_CONTENT)
     return Response({"error": "User not authenticated."}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+
+# Service APIs
+@api_view(['GET'])
+def get_services(request):
+    """Retrieve all services."""
+    services = Service.objects.all()
+    serializer = ServiceSerializer(services, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def create_service(request):
+    """Create a new service."""
+    serializer = ServiceSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_service(request, pk):
+    """Delete a service."""
+    service = get_object_or_404(Service, pk=pk)
+    service.delete()
+    return Response({"message": "Service deleted successfully!"}, status=status.HTTP_204_NO_CONTENT)
+
+# Category APIs
+@api_view(['GET'])
+def get_categories(request, service_id=None):
+    """Retrieve categories for a specific service or all categories."""
+    if service_id:
+        categories = Category.objects.filter(service_id=service_id)
+    else:
+        categories = Category.objects.all()
+    serializer = CategorySerializer(categories, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def create_category(request):
+    """Create a new category."""
+    serializer = CategorySerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_category(request, pk):
+    """Delete a category."""
+    category = get_object_or_404(Category, pk=pk)
+    category.delete()
+    return Response({"message": "Category deleted successfully!"}, status=status.HTTP_204_NO_CONTENT)
+
+# Doctor APIs
+@api_view(['GET'])
+def get_doctors(request, category_id=None):
+    """Retrieve doctors for a specific category or all doctors."""
+    if category_id:
+        doctors = Doctor.objects.filter(category_id=category_id)
+    else:
+        doctors = Doctor.objects.all()
+    serializer = DoctorSerializer(doctors, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def create_doctor(request):
+    """Create a new doctor."""
+    serializer = DoctorSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_doctor(request, pk):
+    """Delete a doctor."""
+    doctor = get_object_or_404(Doctor, pk=pk)
+    doctor.delete()
+    return Response({"message": "Doctor deleted successfully!"}, status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['PUT'])
+def edit_service(request, pk):
+    """Edit an existing service."""
+    service = get_object_or_404(Service, pk=pk)
+    data = request.data.copy()
+
+    # If no image is provided, retain the current image
+    if 'image' not in request.FILES:
+        data['image'] = service.image
+
+    serializer = ServiceSerializer(service, data=data, partial=True)  # Allow partial updates
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

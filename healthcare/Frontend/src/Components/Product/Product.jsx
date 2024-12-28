@@ -196,7 +196,7 @@ export default function Product() {
                       </td>
                       <td>৳{(item.quantity * item.productPrice).toFixed(2)}</td>
                       <td>
-                        <button onClick={() => handleRemoveFromCart(item.id)}>
+                        <button className="remove-button" onClick={() => handleRemoveFromCart(item.id)}>
                           Remove
                         </button>
                       </td>
