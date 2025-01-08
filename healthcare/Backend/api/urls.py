@@ -30,6 +30,7 @@ from .views import (
     get_services, create_service, delete_service,
     get_categories, create_category, delete_category,
     get_doctors, create_doctor, delete_doctor,edit_service,
+    edit_category,
 )
 urlpatterns = [
     # Product endpoints
@@ -52,6 +53,8 @@ urlpatterns = [
     path('categories/', get_categories, name='get_categories'),
     path('categories/<int:service_id>/', get_categories, name='get_service_categories'),
     path('categories/create/', create_category, name='create_category'),
+    path('categories/<int:pk>/edit/', edit_category, name='edit_category'),
+
     path('categories/<int:pk>/delete/', delete_category, name='delete_category'),
 
     # Doctor APIs

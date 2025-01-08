@@ -30,10 +30,17 @@ class ServiceSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    service_name = serializers.CharField(source='service.name', read_only=True)  # Add a service_name field
+
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ['id', 'description', 'service', 'service_name', 'image']  # Include 'service_name' in the output
 
+    def get_service_detail(self, obj):
+        return {
+            "id": obj.service.id,
+            "name": obj.service.name
+        }
 
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:

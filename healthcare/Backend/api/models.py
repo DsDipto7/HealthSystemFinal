@@ -40,12 +40,11 @@ class Service(models.Model):
 
 class Category(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='categories')
-    name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='media/')
 
     def __str__(self):
-        return self.name
+        return f"Category for {self.service.name}"
 
 
 class Doctor(models.Model):

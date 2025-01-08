@@ -212,3 +212,19 @@ def edit_service(request, pk):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def edit_category(request, pk):
+    """Edit an existing category."""
+    category = get_object_or_404(Category, pk=pk)
+    data = request.data.copy()
+
+    if 'image' not in request.FILES:
+        data['image'] = category.image
+
+    serializer = CategorySerializer(category, data=data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
