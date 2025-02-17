@@ -13,6 +13,8 @@ import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import SetPassword from "./Components/SetPassword/SetPassword";
 import Chat from "./Components/Chat/Chat";
 import Service from "./Components/Service/Service";
+import DiseasePrediction  from "./Components/Deseas_Pred/DiseasePrediction";
+
 
 
 
@@ -37,11 +39,13 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/service" element={<Service/>} />
+        <Route path="/predictdisease" element={<DiseasePrediction />} />
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
         <Route path="/registeradmin" element={<Adminregister />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
+    
         {/* Protected Route - Wrapped in PrivateRoute */}
         
       </Routes>

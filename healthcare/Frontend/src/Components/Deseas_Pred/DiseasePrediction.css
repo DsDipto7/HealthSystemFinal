@@ -1,0 +1,101 @@
+.disease-prediction-container {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  width: 60%;
+  text-align: center;
+}
+
+form {
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.back-button {
+  background-color: red; /* Set button color to red */
+  color: white;          /* Set text color to white */
+  padding: 10px 20px;    /* Add padding for size */
+  border: none;          /* Remove default border */
+  border-radius: 4px;    /* Add rounded corners */
+  cursor: pointer;       /* Change cursor to pointer */
+  margin: 10px;          /* Add margin around the button */
+}
+
+.back-button:hover {
+  background-color: darkred; /* Change to a darker shade of red on hover */
+  color: white;              /* Ensure text color remains white */
+}
+
+
+
+
+
+.suggestion-container {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  width: 80%;
+}
+
+.symptom-suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.symptom-suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.symptom-suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.result-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.result-container h3 {
+  font-size: 1.5rem;
+}
+
+.curl-command-container {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}

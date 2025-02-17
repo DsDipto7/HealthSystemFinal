@@ -67,6 +67,7 @@ export default function Navbar() {
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/predictdisease">Prediction</Link>
         <Link to="/product">Product</Link>
         <Link to="/service">Service</Link>
         <Link to="/chat">Chat</Link>
