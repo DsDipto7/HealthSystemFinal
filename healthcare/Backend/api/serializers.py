@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Cart, Service, Category, Doctor
+from .models import Product, Cart, Service, Category, Doctor,Order, Prescription
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,6 +50,14 @@ class DoctorSerializer(serializers.ModelSerializer):
         
         
         
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = ['id', 'user', 'full_name', 'address', 'phone_number', 'email', 'total_price', 'created_at', 'status']        
         
         
-        
+
+class PrescriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Prescription
+        fields = '__all__'

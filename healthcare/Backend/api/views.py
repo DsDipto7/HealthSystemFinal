@@ -1,13 +1,14 @@
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.shortcuts import get_object_or_404
-from .models import Product,Cart
+from .models import Product,Cart, Prescription
 from .serializers import ProductSerializer
 from .serializers import CartSerializer
-from .models import Service, Category, Doctor
-from .serializers import ServiceSerializer, CategorySerializer, DoctorSerializer
+from .models import Service, Category, Doctor,Order
+from .serializers import ServiceSerializer, CategorySerializer, DoctorSerializer,OrderSerializer
+from .serializers import PrescriptionSerializer
 
 
 @api_view(['GET'])
@@ -228,3 +229,62 @@ def edit_category(request, pk):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+@api_view(['POST'])
+def place_order(request):
+    if request.user.is_authenticated:
+        try:
+            data = request.data
+            # Validate required fields
+            required_fields = ['full_name', 'address', 'phone_number', 'email', 'total_price']
+            for field in required_fields:
+                if field not in data:
+                    return Response(
+                        {"error": f"{field} is required"}, 
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+
+            # Create the order
+            order = Order.objects.create(
+                user=request.user,
+                full_name=data['full_name'],
+                address=data['address'],
+                phone_number=data['phone_number'],
+                email=data['email'],
+                total_price=data['total_price']
+            )
+
+            # Clear the user's cart after order creation
+            Cart.objects.filter(user=request.user).delete()
+
+            # Return the order details
+            serializer = OrderSerializer(order)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+    return Response(
+        {"error": "User not authenticated."}, 
+        status=status.HTTP_401_UNAUTHORIZED
+    )
+    
+@api_view(['POST'])
+def upload_prescription(request):
+    parser_classes = (MultiPartParser, FormParser)
+    serializer = PrescriptionSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'message': 'Prescription uploaded successfully!', 'data': serializer.data}, status=201)
+    return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+def get_prescriptions(request):
+    prescriptions = Prescription.objects.all()
+    serializer = PrescriptionSerializer(prescriptions, many=True)
+    return Response(serializer.data)

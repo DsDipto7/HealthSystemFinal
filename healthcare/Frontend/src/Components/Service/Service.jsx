@@ -58,11 +58,13 @@ import axios from "axios";
 import Doctor from "../Doctor/Doctor";
 import Test from "../Test/Test";
 import "./Service.css"; // Import custom CSS for styling
+import { useNavigate } from 'react-router-dom';
 
 export default function Service() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchServices();
@@ -72,7 +74,19 @@ export default function Service() {
     setLoading(true);
     try {
       const response = await axios.get("http://127.0.0.1:8000/api/services/");
-      setServices(response.data);
+      // Add Upload Prescription as a service if it doesn't exist
+      const hasUploadPrescription = response.data.some(service => service.name === "Upload Prescription");
+      if (!hasUploadPrescription) {
+        const allServices = [...response.data, {
+          id: 'prescription',
+          name: "Upload Prescription",
+          description: "Upload your prescription for medicine delivery",
+          image: "/prescription-icon.png" // Make sure to add this image to your public folder
+        }];
+        setServices(allServices);
+      } else {
+        setServices(response.data);
+      }
     } catch (error) {
       console.error("Error fetching services:", error);
     } finally {
@@ -81,7 +95,11 @@ export default function Service() {
   };
 
   const handleServiceClick = (serviceName) => {
-    setSelectedService(serviceName);
+    if (serviceName === "Upload Prescription") {
+      navigate('/upload-prescription');
+    } else {
+      setSelectedService(serviceName);
+    }
   };
 
   const renderContent = () => {
@@ -100,7 +118,9 @@ export default function Service() {
                 onClick={() => handleServiceClick(service.name)}
               >
                 <img
-                  src={`http://127.0.0.1:8000${service.image}`}
+                  src={service.id === 'prescription' 
+                    ? service.image 
+                    : `http://127.0.0.1:8000${service.image}`}
                   alt={service.name}
                   className="service-image"
                 />

@@ -14,6 +14,9 @@ import SetPassword from "./Components/SetPassword/SetPassword";
 import Chat from "./Components/Chat/Chat";
 import Service from "./Components/Service/Service";
 import DiseasePrediction  from "./Components/Deseas_Pred/DiseasePrediction";
+import Checkout from "./Components/Checkout/Checkout";
+import Payment from './Components/Payment/Payment';
+import PrescriptionUpload from './Components/PrescriptionUpload/PrescriptionUpload';
 
 
 
@@ -40,12 +43,15 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/service" element={<Service/>} />
         <Route path="/predictdisease" element={<DiseasePrediction />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/upload-prescription" element={<PrescriptionUpload />} />
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
         <Route path="/registeradmin" element={<Adminregister />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
-    
+      
         {/* Protected Route - Wrapped in PrivateRoute */}
         
       </Routes>

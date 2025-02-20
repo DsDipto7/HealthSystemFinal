@@ -1,34 +1,4 @@
-/* .custom-table {
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    font-size: 16px;
-    text-align: left;
-}
 
-.custom-table th,
-.custom-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-.custom-table thead {
-    background-color: #343a40;
-    color: #ffffff;
-}
-
-.custom-table tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.custom-table tbody tr:hover td {
-    color: #343a40;
-    font-weight: bold;
-} */
-
-/* General table styling */
-/* General table styling */
 .custom-table {
     width: 100%;
     border-collapse: collapse;
