@@ -117,17 +117,29 @@ const DiseasePrediction = () => {
         )}
 
         <div className="button-group">
-          <button className="predict-button" type="button" onClick={handleButtonClick}>Predict</button>
-          <button className="back-button" type="button" onClick={handleButtonClick2}>Back</button>
+          <button
+            className="predict-button"
+            type="button"
+            onClick={handleButtonClick}
+          >
+            Predict
+          </button>
+          <button
+            className="back-button"
+            type="button"
+            onClick={handleButtonClick2}
+          >
+            Back
+          </button>
         </div>
       </form>
 
-      {curlCommand && (
+      {/* {curlCommand && (
         <div className="curl-command-container">
           <h3>Generated curl command:</h3>
           <pre>{curlCommand}</pre>
         </div>
-      )}
+      )} */}
 
       {result && (
         <div className="result-container">
@@ -158,11 +170,12 @@ const DiseasePrediction = () => {
 
           <h4>Precautions:</h4>
           <ul>
-            {Object.values(result.precautions).map((precaution, index) => (
-              <li key={index}>{precaution}</li>
-            ))}
+            {Object.keys(result.precautions)
+              .filter((key) => key.startsWith("Precaution_"))
+              .map((key, index) => (
+                <li key={index}>{result.precautions[key]}</li>
+              ))}
           </ul>
-
           <h4>Workout Tips:</h4>
           <ul>
             {result.workout.map((tip, index) => (

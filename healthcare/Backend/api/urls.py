@@ -1,21 +1,5 @@
-# from django.urls import path
-# from .views import get_products, create_products
-
-# urlpatterns =[
-#     path('products/',get_products,name='get_products'),
-#     path('products/create/',create_products,name='create_products'),
-    
-# ]
-# from django.urls import path
-# from .views import get_products, create_products, edit_product, delete_product
-
-# urlpatterns = [
-#     path('products/', get_products, name='get_products'),
-#     path('products/create/', create_products, name='create_products'),
-#      path('products/<int:pk>/edit/', edit_product, name='edit_product'),
-#     path('products/<int:pk>/delete/', delete_product, name='delete_product'),
-# ]
 from django.urls import path
+from .views import upload_prescription, get_prescriptions
 from .views import (
     get_products,
     create_products,
@@ -25,6 +9,8 @@ from .views import (
     view_cart,
     update_cart_quantity,
     remove_from_cart,
+    place_order,  
+  
 )
 from .views import (
     get_services, create_service, delete_service,
@@ -64,4 +50,10 @@ urlpatterns = [
     path('doctors/<int:pk>/delete/', delete_doctor, name='delete_doctor'),
     
     
+    path('order/place/', place_order, name='place_order'),
+     path('prescription/upload/', upload_prescription, name='upload_prescription'),
+    path('prescription/list/', get_prescriptions, name='get_prescriptions'),
+     
+    
+   
 ]

@@ -56,3 +56,33 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Order(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=255)
+    address = models.TextField()
+    phone_number = models.CharField(max_length=15)
+    email = models.EmailField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=50, default='Pending')  # Pending, Completed, Cancelled
+    payment_status = models.CharField(max_length=50, default='Unpaid')  # Add this field
+
+    def __str__(self):
+        return f"Order {self.id} - {self.user.username}"
+
+    def calculate_total(self):
+        cart_items = Cart.objects.filter(user=self.user)
+        total = sum(item.total_price() for item in cart_items)
+        self.total_price = total
+        self.save()
+
+class Prescription(models.Model):
+    full_name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=15)
+    email = models.EmailField()
+    prescription_image = models.ImageField(upload_to='media/')  # Image upload path
+
+    def __str__(self):
+        return f"{self.full_name} - {self.phone_number}"

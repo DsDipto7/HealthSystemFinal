@@ -1,101 +1,146 @@
+/* Ensures styles apply only within the Disease Prediction component */
 .disease-prediction-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  margin: 20px auto;
-  width: 60%;
+}
+
+.disease-prediction-container h1 {
   text-align: center;
+  font-size: 24px;
+  color: #333;
 }
 
-form {
-  margin: 20px 0;
+.disease-prediction-container form {
+  display: flex;
+  flex-direction: column;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+.disease-prediction-container label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
 }
 
-input {
+.disease-prediction-container input {
   padding: 10px;
-  width: 80%;
-  margin-bottom: 20px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  outline: none;
+  margin-bottom: 12px;
 }
 
-button {
+.disease-prediction-container input:focus {
+  border-color: #4CAF50;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.button-group .predict-button,
+.button-group .back-button {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button-group .back-button {
+  background-color: #f44336;
+}
+
+.button-group .predict-button:hover {
   background-color: #45a049;
 }
 
-
-.back-button {
-  background-color: red; /* Set button color to red */
-  color: white;          /* Set text color to white */
-  padding: 10px 20px;    /* Add padding for size */
-  border: none;          /* Remove default border */
-  border-radius: 4px;    /* Add rounded corners */
-  cursor: pointer;       /* Change cursor to pointer */
-  margin: 10px;          /* Add margin around the button */
+.button-group .back-button:hover {
+  background-color: #d32f2f;
 }
 
-.back-button:hover {
-  background-color: darkred; /* Change to a darker shade of red on hover */
-  color: white;              /* Ensure text color remains white */
-}
-
-
-
-
-
+/* Dropdown suggestions */
 .suggestion-container {
   position: relative;
-  display: inline-block;
-  text-align: left;
-  width: 80%;
+  width: 100%;
 }
 
 .symptom-suggestions {
   list-style: none;
-  padding: 0;
   margin: 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0;
   max-height: 150px;
   overflow-y: auto;
-  background-color: #fff;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
 }
 
 .symptom-suggestions li {
-  padding: 8px 12px;
+  padding: 8px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .symptom-suggestions li:hover {
   background-color: #f0f0f0;
 }
 
+/* Result section */
 .result-container {
   margin-top: 20px;
-  text-align: left;
+  padding: 15px;
+  background-color: #e8f5e9;
+  border-left: 5px solid #4CAF50;
+  border-radius: 5px;
 }
 
-.result-container h3 {
-  font-size: 1.5rem;
+.result-container h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
-.curl-command-container {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
+.result-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.result-container ul li {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .disease-prediction-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group .predict-button,
+  .button-group .back-button {
+    width: 100%;
+    margin-top: 5px;
+  }
 }

@@ -1,10 +1,9 @@
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Product.css";
+import { useNavigate } from 'react-router-dom';
 
 export default function Product() {
   const [products, setProducts] = useState([]);
@@ -12,6 +11,7 @@ export default function Product() {
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(false);
   const [processing, setProcessing] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProducts();
@@ -118,6 +118,20 @@ export default function Product() {
       .reduce((total, item) => total + item.quantity * item.productPrice, 0)
       .toFixed(2);
 
+  const handlePlaceOrder = () => {
+    if (cart.length === 0) {
+      toast.error("Your cart is empty!");
+      return;
+    }
+    
+    navigate('/checkout', {
+      state: {
+        cartItems: cart,
+        totalPrice: calculateTotalPrice()
+      }
+    });
+  };
+
   return (
     <div className="product-container">
       <ToastContainer position="top-center" autoClose={2000} />
@@ -209,7 +223,9 @@ export default function Product() {
             <button className="cancel-order-btn" onClick={cancelOrder}>
               Cancel Order
             </button>
-            <button className="place-order-btn">Place Order</button>
+            <button className="place-order-btn" onClick={handlePlaceOrder}>
+              Place Order
+            </button>
           </div>
         </div>
       )}
