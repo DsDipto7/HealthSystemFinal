@@ -26,8 +26,30 @@ INSTALLED_APPS = [
     "api",
     "contact",
     'django_extensions',
+    "stripe",
+    "transactions",
+    "payments",
+    # 'rest_framework',
+    "rest_framework_simplejwt"
+  
    
 ]
+
+
+# Stripe API Keys (Get from Stripe Dashboard)
+
+STRIPE_SECRET_KEY = "sk_test_51QvEz9RoqWK389OSYcnYNPi1xyTNb21GAtRidTYVA5en4jxQPVelfsZEUOn4juWaW2j6uByECwdaZVoFLolKscbY00DYP7R8Yw"
+
+
+
+# STRIPE_SECRET_KEY = "sk_test_51QvEz9RoqWK389OSYcnYNPi1xyTNb21GAtRidTYVA5en4jxQPVelfsZEUOn4juWaW2j6uByECwdaZVoFLolKscbY00DYP7R8Yw"
+STRIPE_PUBLIC_KEY = "pk_test_51QvEz9RoqWK389OSXrTxrJPZcVB4dAXWsIihe3gxak8P0R1DKiTQK8BOLZMLGVwEHRp6P8Ebw05R2jTs6cVTgWQw00gwuP9fgd"
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Your React frontend URL
+]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

@@ -17,6 +17,14 @@ import DiseasePrediction  from "./Components/Deseas_Pred/DiseasePrediction";
 import Checkout from "./Components/Checkout/Checkout";
 import Payment from './Components/Payment/Payment';
 import PrescriptionUpload from './Components/PrescriptionUpload/PrescriptionUpload';
+//new added for payment 
+import PaymentHomepage from "./Components/PaymentHomepage/PaymentHomepage";
+import PaymentPage from "./Components/PaymentHomepage/PaymentPage";
+import SuccessPage from "./Components/PaymentHomepage/SuccessPage";
+import FailurePage from "./Components/PaymentHomepage/FailurePage";
+import HealthChatbot from './Components/Healthchatbot/Healthchatbot';    //for chatbot with flask llm
+
+
 
 
 
@@ -46,6 +54,18 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/upload-prescription" element={<PrescriptionUpload />} />
+        <Route path="/healthchatbot" element={<HealthChatbot />} />
+
+           {/* for payment */}
+        <Route path="/paymenthomepage" element={<PaymentHomepage />} />
+        <Route path="/paymentforstripe" element={<PaymentPage />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/failure" element={<FailurePage />} />
+
+
+
+
+
 
       {/* admin er   jonno  */}
         <Route path="/loginadmin" element={<Adminlogin />} />
