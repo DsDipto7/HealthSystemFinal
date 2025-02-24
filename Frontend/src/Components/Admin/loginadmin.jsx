@@ -87,26 +87,10 @@ const Signin = () => {
             </div>
             {error && <p className="text-danger">{error}</p>}
             <div className="form-group d-flex justify-content-between">
-              <div>
-                <label className="text-dark checkbox-wrap checkbox-primary">
-                  Remember Me
-                  <input
-                    className="checkbox-class-input"
-                    type="checkbox"
-                    checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-              <div>
-                <a
-                  href="/forgot-password"
-                  className="text-decoration-none text-danger"
-                >
-                  Forgot Password?
-                </a>
-              </div>
+          
+        
+              
+              
             </div>
             <button type="submit" className="btn btn-primary w-100 mt-3">
               Login
@@ -114,16 +98,16 @@ const Signin = () => {
             <Link to="/login" className="ghost">Are you an user?</Link>
           </form>
 
-          <div className="text-center mt-4">
-            <p className="text-dark">
-              New here? <Link to="/registeradmin"> Sign up</Link>
-            </p>
-          </div>
+          
 
-          <p className="w-100 text-center text-dark">
-            &mdash; Or Sign In With &mdash;
-          </p>
+        
           <div className="social d-flex justify-content-center">
+          
+
+          {/* <p className="w-100 text-center text-dark">
+            &mdash; Or Sign In With &mdash;
+          </p> */}
+          {/* <div className="social d-flex justify-content-center">
             <button
               className="btn btn-danger px-2 py-2 mr-md-1 rounded"
               onClick={handleGoogleLogin}
@@ -146,6 +130,11 @@ const Signin = () => {
           >
             Company Signin
           </Link> */}
+          </div> 
+          <p className="w-100 text-center text-dark">
+            &mdash; &mdash; &mdash; &mdash;
+          </p>
+          
         </div>
       </div>
     </div>
