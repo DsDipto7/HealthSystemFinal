@@ -72,6 +72,7 @@ export default function Navbar() {
         <Link to="/service">Service</Link>
         <Link to="/chat">Chat</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/healthchatbot">Healthbot</Link>
         {isLoggedIn ? (
           <>
             <span className="navbar-username">Hi, {username}!</span>

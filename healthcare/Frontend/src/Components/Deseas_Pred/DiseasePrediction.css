@@ -40,14 +40,17 @@
   border-color: #4CAF50;
 }
 
-.button-group {
+/* Button group with equal width for both buttons */
+.disease-prediction-container .button-group {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
 }
 
-.button-group .predict-button,
-.button-group .back-button {
+.disease-prediction-container .button-group .predict-button,
+.disease-prediction-container .button-group .back-button {
+  flex: 1; /* Ensures both buttons take equal space */
+  margin: 0 5px; /* Adds a small gap between buttons */
   background-color: #4CAF50;
   color: white;
   padding: 10px 15px;
@@ -56,27 +59,28 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  text-align: center; /* Ensures text is centered */
 }
 
-.button-group .back-button {
+.disease-prediction-container .button-group .back-button {
   background-color: #f44336;
 }
 
-.button-group .predict-button:hover {
+.disease-prediction-container .button-group .predict-button:hover {
   background-color: #45a049;
 }
 
-.button-group .back-button:hover {
+.disease-prediction-container .button-group .back-button:hover {
   background-color: #d32f2f;
 }
 
 /* Dropdown suggestions */
-.suggestion-container {
+.disease-prediction-container .suggestion-container {
   position: relative;
   width: 100%;
 }
 
-.symptom-suggestions {
+.disease-prediction-container .symptom-suggestions {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -90,18 +94,18 @@
   z-index: 1000;
 }
 
-.symptom-suggestions li {
+.disease-prediction-container .symptom-suggestions li {
   padding: 8px;
   cursor: pointer;
   font-size: 14px;
 }
 
-.symptom-suggestions li:hover {
+.disease-prediction-container .symptom-suggestions li:hover {
   background-color: #f0f0f0;
 }
 
 /* Result section */
-.result-container {
+.disease-prediction-container .result-container {
   margin-top: 20px;
   padding: 15px;
   background-color: #e8f5e9;
@@ -109,18 +113,18 @@
   border-radius: 5px;
 }
 
-.result-container h4 {
+.disease-prediction-container .result-container h4 {
   font-size: 18px;
   margin-bottom: 8px;
   color: #333;
 }
 
-.result-container ul {
+.disease-prediction-container .result-container ul {
   list-style-type: none;
   padding: 0;
 }
 
-.result-container ul li {
+.disease-prediction-container .result-container ul li {
   background-color: #fff;
   padding: 8px;
   margin-bottom: 5px;
@@ -134,13 +138,13 @@
     padding: 15px;
   }
 
-  .button-group {
+  .disease-prediction-container .button-group {
     flex-direction: column;
   }
 
-  .button-group .predict-button,
-  .button-group .back-button {
+  .disease-prediction-container .button-group .predict-button,
+  .disease-prediction-container .button-group .back-button {
     width: 100%;
-    margin-top: 5px;
+    margin: 5px 0; /* Adjust margin for vertical layout */
   }
 }

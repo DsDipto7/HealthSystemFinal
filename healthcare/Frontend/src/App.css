@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+
+
+/*
+aita pore add kora hoise
+*/
+
+
+.app {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
 }

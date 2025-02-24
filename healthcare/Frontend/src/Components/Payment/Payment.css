@@ -58,3 +58,20 @@
 .proceed-payment-btn:hover:not(:disabled) {
     background-color: #45a049;
 } 
+
+
+.back-button {
+    background-color: red;
+    color: white;
+    padding: 12px 24px; /* Same as proceed-payment-btn */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Same width */
+    font-size: 16px;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+.back-button:hover {
+    background-color: darkred;
+}

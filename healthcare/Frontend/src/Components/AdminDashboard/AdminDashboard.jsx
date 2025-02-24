@@ -3,6 +3,7 @@ import ProductTable from './ProductTable';
 import ServiceTable from './ServiceTable';
 import ContactTable from './ContactTable';
 import PrescriptionTable from './PrescriptionTable';
+import TransactionsTable from './TransactionsTable'; // Import the new TransactionsTable component
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -51,6 +52,13 @@ const AdminDashboard = () => {
                         onClick={() => setActiveTab('prescriptions')}
                     >
                         Prescriptions
+                    </button>
+                    
+                    <button
+                        className={`tab-button ${activeTab === 'transactions' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('transactions')}
+                    >
+                        Transactions
                     </button>
                 </div>
             </div>

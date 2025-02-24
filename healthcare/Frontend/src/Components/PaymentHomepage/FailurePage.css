@@ -1,0 +1,25 @@
+.failure-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.failure-page h1 {
+  color: #dc3545;
+  font-size: 2rem;
+}
+
+.failure-page .return-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.failure-page .return-button:hover {
+  background-color: #0056b3;
+}
