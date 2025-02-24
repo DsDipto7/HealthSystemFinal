@@ -1,0 +1,226 @@
+/* General Styling */
+.health-chatbot body,
+.health-chatbot html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #26333d, #323741, #21214e);
+    color: #ffffff;
+}
+
+/* Chat Container */
+.health-chatbot .chat {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Chat Card */
+.health-chatbot .card {
+    width: 90%;
+    max-width: 800px;
+    height: 600px;
+    border-radius: 20px !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.health-chatbot .card-header {
+    border-radius: 20px 20px 0 0 !important;
+    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+/* Back Button */
+.health-chatbot .back_btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.health-chatbot .back_btn:hover {
+    color: #52acff;
+}
+
+/* Footer */
+.health-chatbot .card-footer {
+    border-radius: 0 0 20px 20px !important;
+    border-top: none;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Message Container */
+.health-chatbot .msg_card_body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: #52acff rgba(255, 255, 255, 0.1);
+}
+
+.health-chatbot .msg_card_body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.health-chatbot .msg_card_body::-webkit-scrollbar-thumb {
+    background-color: #52acff;
+    border-radius: 4px;
+}
+
+.health-chatbot .msg_card_body::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bot & User Image */
+.health-chatbot .img_cont,
+.health-chatbot .img_cont_msg {
+    position: relative;
+}
+
+.health-chatbot .user_img,
+.health-chatbot .user_img_msg {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.health-chatbot .user_img:hover,
+.health-chatbot .user_img_msg:hover {
+    transform: scale(1.1);
+}
+
+.health-chatbot .user_img {
+    height: 50px;
+    width: 50px;
+}
+
+.health-chatbot .user_img_msg {
+    height: 40px;
+    width: 40px;
+}
+
+/* Online Indicator */
+.health-chatbot .online_icon {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: #4cd137;
+    border-radius: 50%;
+    bottom: 2px;
+    right: 3px;
+    border: 2px solid white;
+}
+
+/* Message Styling */
+.health-chatbot .msg_cotainer {
+    max-width: 75%;
+    word-wrap: break-word;
+    background-color: #52acff;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.health-chatbot .msg_cotainer_send {
+    max-width: 75%;
+    word-wrap: break-word;
+    background-color: #58cc71;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.health-chatbot .msg_cotainer:hover,
+.health-chatbot .msg_cotainer_send:hover {
+    background-color: rgba(82, 172, 255, 0.8);
+}
+
+/* Message Time */
+.health-chatbot .msg_time {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    display: block;
+}
+
+.health-chatbot .msg_time_send {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+
+/* Input Field */
+.health-chatbot .type_msg {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.health-chatbot .type_msg:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+/* Send Button */
+.health-chatbot .btn-primary {
+    background-color: #52acff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.health-chatbot .btn-primary:hover {
+    background-color: #3a8fd9;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .health-chatbot .card {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0 !important;
+    }
+
+    .health-chatbot .msg_cotainer,
+    .health-chatbot .msg_cotainer_send {
+        max-width: 85%;
+    }
+}
