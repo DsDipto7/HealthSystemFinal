@@ -1,0 +1,13 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-section {
+    /* background: url('./assets/background.jpeg');*/
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
