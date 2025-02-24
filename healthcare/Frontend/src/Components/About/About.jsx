@@ -15,6 +15,7 @@ export default function About() {
           <Lottie animationData={AboutLottie}/>
         
         <p>
+          Welcome to our platform Healthcare! We are dedicated to providing the best
           Welcome to our platform! We are dedicated to providing the best
           services for our users. Our goal is to improve healthcare
           accessibility through technology.
