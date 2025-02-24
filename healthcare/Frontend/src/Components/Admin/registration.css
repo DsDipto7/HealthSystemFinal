@@ -1,0 +1,117 @@
+.container {
+  max-width: 1200px;
+}
+
+/* ------------------------------- */
+/* Toast container styling */
+.Toastify__toast-container {
+  width: 300px; /* Adjust width as needed */
+  z-index: 9999;
+}
+
+/* Toast styling */
+.Toastify__toast {
+  background-color: #343a40 !important; /* Dark background */
+  color: #ffffff !important; /* White text */
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.9rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Success toast styling */
+.Toastify__toast--success {
+  background-color: #58785fa2 !important;
+  color: #ffffff !important;
+  font-size: 18px;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Error toast styling */
+.Toastify__toast--error {
+  font-size: 18px;
+  background-color: #dc3546ad !important; /* Red for error */
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Close button styling */
+.Toastify__close-button {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Progress bar styling */
+.Toastify__progress-bar {
+  background-color: #ffffff !important;
+}
+
+.Toastify__toast-body {
+  font-family: Arial, sans-serif;
+}
+
+/* ------------------------------- */
+
+.main-reg-div {
+  position: relative;
+  margin-bottom: 20px !important;
+  margin-top: 100px !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  min-height: 100vh; /* Ensures the div takes full height */
+}
+
+.registration-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.registration-form {
+  background-color: #ffffff;
+}
+
+.form-control,
+.btn-primary {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+/* Center form vertically and horizontally */
+.row.justify-content-center.align-items-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query for Mobile: Hide image on small screens */
+@media (max-width: 768px) {
+  .registration-image {
+    display: none;
+  }
+}
