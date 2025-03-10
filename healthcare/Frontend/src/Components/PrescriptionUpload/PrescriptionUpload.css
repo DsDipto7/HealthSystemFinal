@@ -1,4 +1,4 @@
-.prescription-upload-container {
+/* .prescription-upload-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -53,4 +53,106 @@
 
 .upload-btn:hover {
     background-color: #45a049;
-} 
+}  */
+
+/* Container styling */
+.prescription-upload-container {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #f7f9fc);
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.prescription-upload-container:hover {
+    transform: translateY(-3px);
+}
+
+/* Upload form */
+.upload-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.upload-form:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fafafa;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/* Image preview */
+.image-preview {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-preview img:hover {
+    transform: scale(1.05);
+}
+
+/* Upload button */
+.upload-btn {
+    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.upload-btn:hover {
+    background: linear-gradient(135deg, #357ABD, #2E6AB0);
+    box-shadow: 0 5px 12px rgba(53, 122, 189, 0.3);
+    transform: translateY(-2px);
+}
+
+.upload-btn:active {
+    transform: translateY(0);
+}

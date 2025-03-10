@@ -17,6 +17,7 @@ import DiseasePrediction  from "./Components/Deseas_Pred/DiseasePrediction";
 import Checkout from "./Components/Checkout/Checkout";
 import Payment from './Components/Payment/Payment';
 import PrescriptionUpload from './Components/PrescriptionUpload/PrescriptionUpload';
+import Ambulance from './Components/Ambulance/Ambulance';
 //new added for payment 
 import PaymentHomepage from "./Components/PaymentHomepage/PaymentHomepage";
 import PaymentPage from "./Components/PaymentHomepage/PaymentPage";
@@ -55,6 +56,8 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/upload-prescription" element={<PrescriptionUpload />} />
         <Route path="/healthchatbot" element={<HealthChatbot />} />
+        <Route path="/ambulance" element={<Ambulance />} />
+
 
            {/* for payment */}
         <Route path="/paymenthomepage" element={<PaymentHomepage />} />

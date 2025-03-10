@@ -1,19 +1,46 @@
+/* Table Container */
+.ambulance-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
 
+/* Table Heading */
+.ambulance-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+/* Table Styling */
 .custom-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
     font-size: 17px;
     color: #333;
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Table header styling */
+/* Table Header */
 .custom-table thead {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background: linear-gradient(90deg, #4a00e0, #8e2de2);
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -25,7 +52,7 @@
     padding: 14px 20px;
 }
 
-/* Table body styling */
+/* Table Body */
 .custom-table tbody tr {
     transition: all 0.3s ease;
     background-color: #f9f9f9;
@@ -36,8 +63,8 @@
 }
 
 .custom-table tbody tr:hover {
-    background-color: #eef7fc;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #e0f7fa, #ffffff);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transform: scale(1.01);
 }
@@ -48,50 +75,108 @@
     text-align: center;
 }
 
-/* No data row styling */
+/* No Data Row */
 .custom-table tbody .no-data {
     text-align: center;
     font-style: italic;
-    color: #f39999;
+    color: #d9534f;
     padding: 20px 0;
 }
 
-/* Responsive table */
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    margin-top: 20px;
+/* Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
+.edit-btn,
+.delete-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Add Button */
+.add-ambulance-btn {
+    display: block;
+    width: 220px;
+    padding: 12px;
+    margin: 25px auto;
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-ambulance-btn:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+    transform: scale(1.05);
+}
+
+/* Scrollbar Customization */
 .table-responsive::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-    background: #761ad9;
+    background: #8e2de2;
     border-radius: 10px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb:hover {
-    background: #2575fc;
+    background: #4a00e0;
 }
 
-/* Add shadow to the entire table container */
-.container {
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    background: #fdfdfd;
-}
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .ambulance-title {
+        font-size: 22px;
+    }
 
-/* Main heading styling */
-h2 {
-    text-align: center;
-    color: #ddd6d6;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: capitalize;
+    .custom-table {
+        font-size: 15px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .add-ambulance-btn {
+        width: 180px;
+        font-size: 15px;
+        padding: 10px;
+    }
 }

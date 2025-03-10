@@ -36,12 +36,13 @@ urlpatterns = [
     path("loginadmin/", CandidateLoginView.as_view(), name="login"),
     path("api/",include('api.urls')),
     path('api/', include('contact.urls')),
+    path('ambulance/',include('ambulance.urls')),
 
 
     #for payments app 
-     path("payments/", include("payments.urls")),  # <-- Add this line
+    path("payments/", include("payments.urls")),  
      #for transactions app
-       path('transactions/', include('transactions.urls')),  # Include transactions app URLs
+    path('transactions/', include('transactions.urls')),  
 ]
 
 
