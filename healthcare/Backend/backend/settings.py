@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "login",
     "api",
     "contact",
+    "ambulance",
     'django_extensions',
     "stripe",
     "transactions",
