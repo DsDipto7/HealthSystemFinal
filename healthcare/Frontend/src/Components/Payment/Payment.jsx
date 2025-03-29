@@ -1,7 +1,7 @@
 
 
 //==================================================================================
-//2nd  aita te sob thik khali order details pas koren a
+//2nd  aita te sob thik khali order details pas kore na
 
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";

@@ -1,6 +1,3 @@
-
-
-// export default PrescriptionTable;
 import React, { useEffect, useState } from "react";
 import "./PrescriptionTable.css"; // Custom CSS for styling
 
@@ -32,7 +29,7 @@ export default function PrescriptionTable() {
 
   if (loading) {
     return (
-      <div className="container mt-5">
+      <div className="prescription-table-container">
         <h2 className="text-center mb-4">Prescriptions</h2>
         <div className="text-center">Loading...</div>
       </div>
@@ -41,7 +38,7 @@ export default function PrescriptionTable() {
 
   if (error) {
     return (
-      <div className="container mt-5">
+      <div className="prescription-table-container">
         <h2 className="text-center mb-4">Prescriptions</h2>
         <div className="text-center text-danger">Error: {error}</div>
       </div>
@@ -49,10 +46,10 @@ export default function PrescriptionTable() {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="prescription-table-container">
       <h2 className="text-center mb-4">Prescriptions</h2>
       <div className="table-responsive">
-        <table className="table table-hover custom-table">
+        <table className="prescription-table">
           <thead className="table-dark">
             <tr>
               <th>#</th>

@@ -1,5 +1,5 @@
 /* Scoped styles for the Login component */
-.login-page .login-wrapper {
+.login-page {
     background: #f6f5f7;
     display: flex;
     justify-content: center;
@@ -232,6 +232,11 @@
     width: 50%;
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
+}
+
+.login-page .overlay-panel p {
+    color: white; /* Ensure <p> elements inside overlay-panel are white */
+    margin: 10px 0;
 }
 
 .login-page .overlay-left {

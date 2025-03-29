@@ -168,10 +168,11 @@ export default function ServiceTable() {
       )}
 
       <h3>{editingService ? "Edit Service" : "Add New Service"}</h3>
-      <div className="mb-3">
+      <div className="mb-3" style={{ width: "100%" }}>
         <input
           type="text"
           name="name"
+          
           placeholder="Name"
           value={newService.name}
           onChange={handleInputChange}

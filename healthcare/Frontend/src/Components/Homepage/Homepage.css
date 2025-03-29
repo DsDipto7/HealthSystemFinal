@@ -1,13 +1,59 @@
 .home {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Full-width scrolling banner */
+.banner-container {
+    width: 100vw;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.banner-image {
+    width: 100vw;
+    height: 300px; /* Increased for better visibility */
+    object-fit: cover;
+    border-radius: 0;
 }
 
 .background-section {
-   
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+    width: 100vw;
+}
+
+/* Noticebar (Scrolling Text) */
+.noticebar {
+    width: 100vw;
+    background-color: #ff9800; /* Bright background for better contrast */
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* Marquee effect for notice text */
+.noticebar-text {
+    display: inline-block;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: marquee 10s linear infinite;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }

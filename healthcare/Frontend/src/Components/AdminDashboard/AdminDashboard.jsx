@@ -4,7 +4,7 @@ import ServiceTable from './ServiceTable';
 import ContactTable from './ContactTable';
 import PrescriptionTable from './PrescriptionTable';
 import TransactionsTable from './TransactionsTable'; // Import the new TransactionsTable component
-import './AdminDashboard.css';
+// import './AdminDashboard.css';
 
 const AdminDashboard = () => {
     const [activeTab, setActiveTab] = useState('products');
