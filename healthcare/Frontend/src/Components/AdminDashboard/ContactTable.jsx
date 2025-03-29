@@ -1,14 +1,12 @@
-
 import React, { useEffect, useState } from "react";
 import "./ContactTable.css"; // Custom CSS for styling
 
 export default function ContactTable() {
   const [contacts, setContacts] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch data from backend
     const fetchContacts = async () => {
       try {
         const response = await fetch("http://127.0.0.1:8000/api/contact-list/");
@@ -17,9 +15,9 @@ export default function ContactTable() {
         }
         const data = await response.json();
         setContacts(data);
-        setLoading(false);
       } catch (err) {
         setError(err.message);
+      } finally {
         setLoading(false);
       }
     };
@@ -29,28 +27,28 @@ export default function ContactTable() {
 
   if (loading) {
     return (
-      <div className="container mt-5">
-        <h2 className="text-center mb-4">Contact Messages</h2>
-        <div className="text-center">Loading...</div>
+      <div className="contact-table-container">
+        <h2 className="contact-table-title">Contact Messages</h2>
+        <div className="contact-table-loading">Loading...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="container mt-5">
-        <h2 className="text-center mb-4">Contact Messages</h2>
-        <div className="text-center text-danger">Error: {error}</div>
+      <div className="contact-table-container">
+        <h2 className="contact-table-title">Contact Messages</h2>
+        <div className="contact-table-error">Error: {error}</div>
       </div>
     );
   }
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Contact Messages</h2>
-      <div className="table-responsive">
-        <table className="table table-hover custom-table">
-          <thead className="table-dark">
+    <div className="contact-table-container">
+      <h2 className="contact-table-title">Contact Messages</h2>
+      <div className="contact-table-wrapper">
+        <table className="contact-table">
+          <thead>
             <tr>
               <th>#</th>
               <th>First Name</th>
@@ -74,7 +72,7 @@ export default function ContactTable() {
               ))
             ) : (
               <tr>
-                <td colSpan="6" className="text-center">
+                <td colSpan="6" className="contact-table-no-data">
                   No data available
                 </td>
               </tr>

@@ -29,7 +29,7 @@
 }
 
 .ambulance-table th {
-    background-color: #007bff;
+    background-color: #007bff !important;
     color: white;
     font-weight: bold;
 }
@@ -40,24 +40,6 @@
 
 .ambulance-table tbody tr:hover {
     background-color: #e9ecef;
-}
-
-.add-ambulance-btn {
-    display: block;
-    width: 200px;
-    padding: 10px;
-    margin: 20px auto;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-}
-
-.add-ambulance-btn:hover {
-    background-color: #218838;
 }
 
 .action-buttons {
@@ -91,4 +73,32 @@
 
 .delete-btn:hover {
     background-color: #c82333;
+}
+
+.ambulance-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-ambulance-btn {
+    width: 200px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-ambulance-btn:hover {
+    background-color: #218838;
 }

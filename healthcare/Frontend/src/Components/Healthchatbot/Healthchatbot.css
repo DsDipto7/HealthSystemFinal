@@ -1,17 +1,14 @@
-/* General Styling */
-.health-chatbot body,
-.health-chatbot html {
+/* Scoped styles for the HealthChatbot component */
+.health-chatbot {
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #26333d, #323741, #21214e);
+    background: white;
     color: #ffffff;
 }
 
-/* Chat Container */
 .health-chatbot .chat {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,13 +16,12 @@
     height: 100%;
 }
 
-/* Chat Card */
 .health-chatbot .card {
     width: 90%;
     max-width: 800px;
     height: 600px;
-    border-radius: 20px !important;
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     display: flex;
     flex-direction: column;
@@ -33,11 +29,10 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Header */
 .health-chatbot .card-header {
-    border-radius: 20px 20px 0 0 !important;
+    border-radius: 20px 20px 0 0;
     border-bottom: none;
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
     display: flex;
     align-items: center;
@@ -45,7 +40,6 @@
     backdrop-filter: blur(10px);
 }
 
-/* Back Button */
 .health-chatbot .back_btn {
     background: none;
     border: none;
@@ -61,16 +55,14 @@
     color: #52acff;
 }
 
-/* Footer */
 .health-chatbot .card-footer {
-    border-radius: 0 0 20px 20px !important;
+    border-radius: 0 0 20px 20px;
     border-top: none;
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 }
 
-/* Message Container */
 .health-chatbot .msg_card_body {
     flex: 1;
     overflow-y: auto;
@@ -94,7 +86,6 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Bot & User Image */
 .health-chatbot .img_cont,
 .health-chatbot .img_cont_msg {
     position: relative;
@@ -122,43 +113,26 @@
     width: 40px;
 }
 
-/* Online Indicator */
-.health-chatbot .online_icon {
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background-color: #4cd137;
-    border-radius: 50%;
-    bottom: 2px;
-    right: 3px;
-    border: 2px solid white;
-}
-
-/* Message Styling */
-.health-chatbot .msg_cotainer {
-    max-width: 75%;
-    word-wrap: break-word;
-    background-color: #52acff;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 20px;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-}
-
+.health-chatbot .msg_cotainer,
 .health-chatbot .msg_cotainer_send {
     max-width: 75%;
     word-wrap: break-word;
-    background-color: #58cc71;
-    color: white;
     padding: 12px 16px;
     border-radius: 20px;
     position: relative;
     display: inline-block;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
+}
+
+.health-chatbot .msg_cotainer {
+    background-color: #52acff;
+    color: white;
+}
+
+.health-chatbot .msg_cotainer_send {
+    background-color: #58cc71;
+    color: white;
 }
 
 .health-chatbot .msg_cotainer:hover,
@@ -166,8 +140,8 @@
     background-color: rgba(82, 172, 255, 0.8);
 }
 
-/* Message Time */
-.health-chatbot .msg_time {
+.health-chatbot .msg_time,
+.health-chatbot .msg_time_send {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.7);
     margin-top: 5px;
@@ -175,14 +149,9 @@
 }
 
 .health-chatbot .msg_time_send {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 5px;
-    display: block;
     text-align: right;
 }
 
-/* Input Field */
 .health-chatbot .type_msg {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
@@ -198,7 +167,6 @@
     outline: none;
 }
 
-/* Send Button */
 .health-chatbot .btn-primary {
     background-color: #52acff;
     border: none;
@@ -211,12 +179,11 @@
     background-color: #3a8fd9;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
     .health-chatbot .card {
         height: 100vh;
         width: 100%;
-        border-radius: 0 !important;
+        border-radius: 0;
     }
 
     .health-chatbot .msg_cotainer,

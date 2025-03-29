@@ -93,10 +93,10 @@ export default function AmbulanceTable() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="ambulance-container">
       <ToastContainer position="top-center" autoClose={2000} />
-      <h2>Ambulance Management</h2>
-      <table className="table table-bordered">
+      <h2 className="ambulance-title">Ambulance Management</h2>
+      <table className="ambulance-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -111,15 +111,15 @@ export default function AmbulanceTable() {
               <td>{ambulance.id}</td>
               <td>{ambulance.type}</td>
               <td>{ambulance.contact}</td>
-              <td>
+              <td className="action-buttons">
                 <button
-                  className="btn btn-warning btn-sm me-2"
+                  className="edit-btn"
                   onClick={() => handleEditClick(ambulance)}
                 >
                   Edit
                 </button>
                 <button
-                  className="btn btn-danger btn-sm"
+                  className="delete-btn"
                   onClick={() => handleDeleteAmbulance(ambulance.id)}
                 >
                   Delete
@@ -129,7 +129,7 @@ export default function AmbulanceTable() {
           ))}
         </tbody>
       </table>
-      <div>
+      <div className="ambulance-form">
         <h3>{editingAmbulance ? "Edit Ambulance" : "Add Ambulance"}</h3>
         <input
           type="text"
@@ -137,7 +137,7 @@ export default function AmbulanceTable() {
           value={newAmbulance.type}
           onChange={handleInputChange}
           placeholder="Ambulance Type"
-          className="form-control mb-2"
+          className="input-field"
         />
         <input
           type="text"
@@ -145,10 +145,10 @@ export default function AmbulanceTable() {
           value={newAmbulance.contact}
           onChange={handleInputChange}
           placeholder="Contact Number"
-          className="form-control mb-2"
+          className="input-field"
         />
         <button
-          className="btn btn-primary"
+          className="add-ambulance-btn"
           onClick={editingAmbulance ? handleEditAmbulance : handleAddAmbulance}
         >
           {editingAmbulance ? "Update" : "Add Ambulance"}

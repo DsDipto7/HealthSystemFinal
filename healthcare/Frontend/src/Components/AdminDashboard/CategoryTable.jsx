@@ -192,7 +192,7 @@ export default function CategoryTable() {
       )}
 
       <h3>{editingCategory ? "Edit Category" : "Add New Category"}</h3>
-      <div className="mb-3">
+      <div className="mb-3" style={{ width: "100%" }}>
         <select
           name="service"
           value={newCategory.service}
@@ -221,6 +221,8 @@ export default function CategoryTable() {
           onChange={handleImageUpload}
           className="form-control mb-2"
           disabled={loading}
+          style={{ width: "100%" }} // Ensures it matches the table width
+
         />
         <button
           className="btn btn-primary"

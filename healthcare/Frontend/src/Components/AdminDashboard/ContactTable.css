@@ -1,182 +1,123 @@
-/* Table Container */
-.ambulance-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-}
-
-/* Table Heading */
-.ambulance-title {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-/* Responsive Table Wrapper */
-.table-responsive {
+/* Scoped Contact Table Styles to Prevent Overwriting */
+.contact-table-container {
     width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 12px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Ensure only ContactTable uses this title styling */
+.contact-table-container .contact-table-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Wrapper for responsive design */
+.contact-table-container .contact-table-wrapper {
     overflow-x: auto;
     border-radius: 12px;
 }
 
 /* Table Styling */
-.custom-table {
+.contact-table-container .contact-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 17px;
+    font-size: 16px;
     color: #333;
-    background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Header */
-.custom-table thead {
-    background: linear-gradient(90deg, #4a00e0, #8e2de2);
-    color: #ffffff;
-    font-size: 18px;
+/* Ensure thead is styled correctly with black background */
+.contact-table-container .contact-table thead {
+    background-color: rgb(5, 5, 5) !important; /* Forces black background */
+}
+
+.contact-table-container .contact-table thead th {
+    background-color: rgb(0, 0, 0) !important; /* Ensures all <th> elements are black */
+    color: white !important; /* White text for contrast */
     font-weight: bold;
     text-transform: uppercase;
-    text-align: center;
+    padding: 12px 18px;
 }
 
-.custom-table th {
-    padding: 14px 20px;
+/* If there's any inherited table styling, reset it */
+.contact-table-container .contact-table thead tr {
+    background-color: rgb(7, 7, 7) !important;
 }
 
-/* Table Body */
-.custom-table tbody tr {
+.contact-table-container .contact-table thead th {
+    border: 1px solid #ffffff !important; /* Ensures visibility */
+}
+
+/* Table Rows */
+.contact-table-container .contact-table tbody tr {
     transition: all 0.3s ease;
     background-color: #f9f9f9;
 }
 
-.custom-table tbody tr:nth-child(odd) {
+.contact-table-container .contact-table tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
 
-.custom-table tbody tr:hover {
-    background: linear-gradient(90deg, #e0f7fa, #ffffff);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+.contact-table-container .contact-table tbody tr:hover {
+    background-color: #e0f7fa;
     cursor: pointer;
-    transform: scale(1.01);
 }
 
-.custom-table td {
-    padding: 12px 20px;
-    border-bottom: 1px solid #e0e0e0;
+/* Table Cells */
+.contact-table-container .contact-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
     text-align: center;
 }
 
 /* No Data Row */
-.custom-table tbody .no-data {
+.contact-table-container .contact-table-no-data {
     text-align: center;
     font-style: italic;
     color: #d9534f;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
-/* Buttons */
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.edit-btn,
-.delete-btn {
-    padding: 8px 14px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
+/* Loading & Error Messages */
+.contact-table-container .contact-table-loading,
+.contact-table-container .contact-table-error {
+    font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
 }
 
-.edit-btn {
-    background-color: #ffc107;
-    color: #333;
-}
-
-.edit-btn:hover {
-    background-color: #e0a800;
-    transform: scale(1.05);
-}
-
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
-}
-
-.delete-btn:hover {
-    background-color: #c82333;
-    transform: scale(1.05);
-}
-
-/* Add Button */
-.add-ambulance-btn {
-    display: block;
-    width: 220px;
-    padding: 12px;
-    margin: 25px auto;
-    background: linear-gradient(90deg, #28a745, #218838);
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.add-ambulance-btn:hover {
-    background: linear-gradient(90deg, #218838, #1e7e34);
-    transform: scale(1.05);
+.contact-table-container .contact-table-error {
+    color: red;
 }
 
 /* Scrollbar Customization */
-.table-responsive::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+.contact-table-container .contact-table-wrapper::-webkit-scrollbar {
+    height: 8px;
 }
 
-.table-responsive::-webkit-scrollbar-thumb {
+.contact-table-container .contact-table-wrapper::-webkit-scrollbar-thumb {
     background: #8e2de2;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-.table-responsive::-webkit-scrollbar-thumb:hover {
+.contact-table-container .contact-table-wrapper::-webkit-scrollbar-thumb:hover {
     background: #4a00e0;
 }
 
-/* Mobile Optimization */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .ambulance-title {
-        font-size: 22px;
-    }
-
-    .custom-table {
-        font-size: 15px;
-    }
-
-    .edit-btn,
-    .delete-btn {
+    .contact-table-container .contact-table {
         font-size: 14px;
-        padding: 6px 10px;
     }
 
-    .add-ambulance-btn {
-        width: 180px;
-        font-size: 15px;
-        padding: 10px;
+    .contact-table-container .contact-table th,
+    .contact-table-container .contact-table td {
+        padding: 8px;
     }
 }

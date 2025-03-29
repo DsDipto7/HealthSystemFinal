@@ -1,3 +1,4 @@
+/* Scoped styles for the PaymentHomepage component */
 .payment-container {
     max-width: 600px;
     margin: 0 auto;
@@ -6,6 +7,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .payment-container h1 {
@@ -97,4 +99,39 @@
 
 .payment-container .back-btn:hover {
     background-color: darkred;
+}
+
+/* Order Details */
+.payment-container .order-details {
+    margin-bottom: 20px;
+}
+
+.payment-container .order-details h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.payment-container .order-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.payment-container .order-details ul li {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Customer Information */
+.payment-container .customer-info {
+    margin-bottom: 20px;
+}
+
+.payment-container .customer-info h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.payment-container .customer-info p {
+    margin: 5px 0;
+    color: #555;
 }

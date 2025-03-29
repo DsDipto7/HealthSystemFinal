@@ -6,7 +6,7 @@ export default function Footer() {
     <div>
       <footer className="footer">
         <div className="footer-content">
-          <div className="footer-logo">Logo</div>
+          <div className="footer-logo">HEALTHCARE</div>
           <nav className="footer-nav">
             <a href="/">Privacy Policy</a>
             <a href="/">Terms of Service</a>

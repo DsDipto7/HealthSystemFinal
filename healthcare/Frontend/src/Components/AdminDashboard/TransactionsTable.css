@@ -1,0 +1,64 @@
+/* Scoped styling within .transactions-container to avoid conflicts */
+.transactions-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling for Transactions Header */
+.transactions-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Table Styling - Scoped within .transactions-container */
+.transactions-container .transactions-table {
+    width: 100% !important;  /* Ensures table takes full width */
+    max-width: 100% !important;  /* Prevents shrinking */
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure th and td styling applies only to this table */
+.transactions-container .transactions-table th,
+.transactions-container .transactions-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Header Styling */
+.transactions-container .transactions-table thead th {
+    background-color: #2b7d67 !important;
+    color: white !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Alternate Row Colors */
+.transactions-container .transactions-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover Effect */
+.transactions-container .transactions-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transactions-container {
+        padding: 10px;
+    }
+
+    .transactions-container .transactions-table th,
+    .transactions-container .transactions-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
