@@ -1,150 +1,191 @@
-/* Ensures styles apply only within the Disease Prediction component */
+/* Container styling */
 .disease-prediction-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 28px 20px 36px 20px;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0f7fa 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Title */
 .disease-prediction-container h1 {
   text-align: center;
-  font-size: 24px;
-  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 22px;
 }
 
+/* Form styling */
 .disease-prediction-container form {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .disease-prediction-container label {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #0f172a;
 }
 
 .disease-prediction-container input {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #bcdff1;
+  border-radius: 7px;
   outline: none;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+  background: #fafdff;
 }
 
 .disease-prediction-container input:focus {
-  border-color: #4CAF50;
+  border-color: #06b6d4;
 }
 
-/* Button group with equal width for both buttons */
-.disease-prediction-container .button-group {
+/* Button group */
+.button-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
 }
 
-.disease-prediction-container .button-group .predict-button,
-.disease-prediction-container .button-group .back-button {
-  flex: 1; /* Ensures both buttons take equal space */
-  margin: 0 5px; /* Adds a small gap between buttons */
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
+.predict-button,
+.back-button {
+  flex: 1 1 120px;
+  min-width: 120px;
+  background: linear-gradient(135deg, #38bdf8 60%, #06b6d4 100%);
+  color: #fff;
+  padding: 12px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 7px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  text-align: center; /* Ensures text is centered */
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, filter 0.2s;
+  text-align: center;
 }
 
-.disease-prediction-container .button-group .back-button {
-  background-color: #f44336;
+.back-button {
+  background: linear-gradient(135deg, #f43f5e 60%, #ec4899 100%);
 }
 
-.disease-prediction-container .button-group .predict-button:hover {
-  background-color: #45a049;
-}
-
-.disease-prediction-container .button-group .back-button:hover {
-  background-color: #d32f2f;
+.predict-button:hover,
+.back-button:hover {
+  filter: brightness(1.08);
 }
 
 /* Dropdown suggestions */
-.disease-prediction-container .suggestion-container {
+.suggestion-container {
   position: relative;
   width: 100%;
+  z-index: 20;
 }
 
-.disease-prediction-container .symptom-suggestions {
+.symptom-suggestions {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 150px;
+  max-height: 160px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  background-color: white;
-  border-radius: 4px;
+  border: 1px solid #bcdff1;
+  background-color: #fff;
+  border-radius: 7px;
   position: absolute;
   width: 100%;
-  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
-.disease-prediction-container .symptom-suggestions li {
-  padding: 8px;
+.symptom-suggestions li {
+  padding: 10px 14px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.97rem;
+  color: #0f172a;
+  transition: background 0.2s;
 }
 
-.disease-prediction-container .symptom-suggestions li:hover {
-  background-color: #f0f0f0;
+.symptom-suggestions li:hover {
+  background-color: #e0f2fe;
 }
 
 /* Result section */
-.disease-prediction-container .result-container {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #e8f5e9;
-  border-left: 5px solid #4CAF50;
-  border-radius: 5px;
+.result-container {
+  margin-top: 28px;
+  padding: 18px 14px;
+  background: linear-gradient(120deg, #f0fdf4 0%, #d1fae5 100%);
+  border-left: 5px solid #10b981;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.07);
 }
 
-.disease-prediction-container .result-container h4 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #333;
+.result-container h4 {
+  font-size: 1.13rem;
+  margin-bottom: 7px;
+  color: #047857;
 }
 
-.disease-prediction-container .result-container ul {
+.result-container ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 12px;
 }
 
-.disease-prediction-container .result-container ul li {
+.result-container ul li {
   background-color: #fff;
-  padding: 8px;
+  padding: 9px 12px;
   margin-bottom: 5px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  font-size: 0.98rem;
+  color: #334155;
 }
 
+/* Download PDF button */
+.download-pdf-button {
+  margin-top: 22px;
+  padding: 12px 0;
+  width: 100%;
+  background: linear-gradient(135deg, #34d399 60%, #10b981 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.07);
+}
+
+.download-pdf-button:hover {
+  background: linear-gradient(135deg, #059669 60%, #10b981 100%);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .disease-prediction-container {
-    width: 90%;
-    padding: 15px;
+    width: 96%;
+    padding: 14px 4px 22px 4px;
   }
 
-  .disease-prediction-container .button-group {
+  .button-group {
     flex-direction: column;
+    gap: 8px;
   }
 
-  .disease-prediction-container .button-group .predict-button,
-  .disease-prediction-container .button-group .back-button {
+  .predict-button,
+  .back-button,
+  .download-pdf-button {
     width: 100%;
-    margin: 5px 0; /* Adjust margin for vertical layout */
+    min-width: unset;
+  }
+
+  .result-container {
+    padding: 12px 6px;
   }
 }

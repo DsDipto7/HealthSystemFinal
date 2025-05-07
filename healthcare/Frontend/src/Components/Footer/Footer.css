@@ -15,7 +15,7 @@
 }
 
 .footer-logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: #0c0202;
 }
@@ -28,7 +28,7 @@
 }
 
 .footer-nav a {
-    font-size: 16px;
+    font-size: 20px;
     color: #140606;
     font-weight: 500;
     text-decoration: none;
@@ -52,6 +52,6 @@
 
 .footer-bottom {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
     color: #140606;
 }

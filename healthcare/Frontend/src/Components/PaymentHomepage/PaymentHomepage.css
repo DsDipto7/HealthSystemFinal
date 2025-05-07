@@ -1,137 +1,92 @@
-/* Scoped styles for the PaymentHomepage component */
-.payment-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+/* PaymentHomepage.css - Scoped Styles */
+
+.payment-homepage {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.payment-container h1 {
-    text-align: center;
     color: #333;
+  }
+  
+  .payment-homepage .container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-homepage h1 {
+    text-align: center;
+    color: #2c3e50;
     margin-bottom: 20px;
-}
-
-.payment-container p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.payment-container form {
+  }
+  
+  .payment-homepage h3 {
+    margin-top: 30px;
+    color: #2980b9;
+  }
+  
+  .payment-homepage p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .payment-homepage ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .payment-homepage li {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  .payment-homepage form {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-}
-
-.payment-container label {
+  }
+  
+  .payment-homepage label {
+    font-weight: 600;
     margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-}
-
-.payment-container input[type="email"] {
+  }
+  
+  .payment-homepage input[type="email"] {
     padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     font-size: 16px;
-}
-
-.payment-container input[type="email"]:focus {
-    border-color: #007bff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
     outline: none;
-}
-
-.payment-container button {
-    padding: 10px;
-    background-color: #007bff;
+    transition: border 0.3s;
+  }
+  
+  .payment-homepage input[type="email"]:focus {
+    border-color: #3498db;
+  }
+  
+  .payment-homepage button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.payment-container button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-}
-
-.payment-container button:hover:not(:disabled) {
-    background-color: #0056b3;
-}
-
-/* Payment Buttons */
-.payment-container .payment-btn, 
-.payment-container .back-btn {
-    padding: 12px 24px; 
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%; 
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.payment-container .payment-btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.payment-container .payment-btn:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-.payment-container .payment-btn:hover:not(:disabled) {
-    background-color: #45a049;
-}
-
-.payment-container .back-btn {
-    background-color: red;
-    color: white;
-}
-
-.payment-container .back-btn:hover {
-    background-color: darkred;
-}
-
-/* Order Details */
-.payment-container .order-details {
-    margin-bottom: 20px;
-}
-
-.payment-container .order-details h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.payment-container .order-details ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.payment-container .order-details ul li {
-    margin: 5px 0;
-    color: #555;
-}
-
-/* Customer Information */
-.payment-container .customer-info {
-    margin-bottom: 20px;
-}
-
-.payment-container .customer-info h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.payment-container .customer-info p {
-    margin: 5px 0;
-    color: #555;
-}
+    margin-bottom: 10px;
+  }
+  
+  .payment-homepage button:hover {
+    background-color: #2980b9;
+  }
+  
+  .payment-homepage .back-btn {
+    background-color: #95a5a6;
+  }
+  
+  .payment-homepage .back-btn:hover {
+    background-color: #7f8c8d;
+  }
+  

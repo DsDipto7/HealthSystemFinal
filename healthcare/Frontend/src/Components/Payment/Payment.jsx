@@ -9,6 +9,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "./Payment.css";
 import { loadStripe } from "@stripe/stripe-js";
+import stripe from "../../assets/stripe.png"; // Adjust the path to your Stripe logo
 
 const Payment = () => {
   const location = useLocation();
@@ -89,20 +90,20 @@ const Payment = () => {
 
       {/* Payment Methods */}
       <div className="payment-methods">
-        <div
+        {/* <div
           className={`payment-method ${selectedPayment === "sslcommerz" ? "selected" : ""}`}
           onClick={() => handlePaymentMethodSelect("sslcommerz")}
         >
           <img src="/path-to-sslcommerz-logo.png" alt="SSLCommerz" />
           <span>SSLCommerz</span>
-        </div>
+        </div> */}
 
         <div
           className={`payment-method ${selectedPayment === "stripe" ? "selected" : ""}`}
           onClick={() => handlePaymentMethodSelect("stripe")}
         >
-          <img src="/path-to-stripe-logo.png" alt="Stripe" />
-          <span>Stripe</span>
+          <img src={stripe} alt="Stripe" />
+          {/* <span>Stripe</span> */}
         </div>
       </div>
 
