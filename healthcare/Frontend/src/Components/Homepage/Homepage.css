@@ -1,59 +1,117 @@
-.home {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .home {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-}
-
-/* Full-width scrolling banner */
-.banner-container {
-    width: 100vw;
-    margin: 0;
-    padding-top: 20px;
-}
-
-.banner-image {
-    width: 100vw;
-    height: 300px; /* Increased for better visibility */
-    object-fit: cover;
-    border-radius: 0;
-}
-
-.background-section {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Hero Section */
+  .homepage-hero {
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
     width: 100vw;
-}
-
-/* Noticebar (Scrolling Text) */
-.noticebar {
-    width: 100vw;
-    background-color: #ff9800; /* Bright background for better contrast */
-    padding: 10px 0;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-}
-
-/* Marquee effect for notice text */
-.noticebar-text {
-    display: inline-block;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #183850 60%, #1e3c47 100%);
+    padding: 0 5vw;
+    box-sizing: border-box;
+    flex: 1;
+  }
+  
+  .hero-text {
+    flex: 1;
     color: #fff;
-    font-size: 18px; /* Increased font size */
+    max-width: 600px;
+  }
+  
+  .hero-text h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
     font-weight: bold;
-    text-transform: uppercase;
-    animation: marquee 10s linear infinite;
-}
-
-/* Marquee Animation */
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
+    color: #00e0ff;
+    font-weight: bold;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #d1ecf1;
+  }
+  
+  .upload-btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-btn:hover {
+    background-color: #008ba3;
+  }
+  
+  /* Right-side image */
+  .hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .hero-image img {
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .homepage-hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      width: 100vw;
     }
-    100% {
-        transform: translateX(-100%);
+  
+    .hero-text {
+      max-width: 100%;
     }
-}
+  
+    .hero-image {
+      margin-top: 30px;
+      justify-content: center;
+    }
+  
+    .hero-image img {
+      width: 90vw;
+      max-width: 350px;
+    }
+  }
+  
+  /* Ensure main.homepage-hero grows to fill space if needed */
+  main.homepage-hero {
+    flex: 1;
+  }
