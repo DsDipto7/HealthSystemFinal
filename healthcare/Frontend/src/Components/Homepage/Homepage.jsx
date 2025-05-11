@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import About from "../About/About";
+import Service from "../Service/Service";
+import Contact from "../Contact/Contact";
+import Product from "../Product/Product";
+import Healthbot from "../Healthchatbot/Healthchatbot";
+import Ambulance from "../Ambulance/Ambulance";
 import axios from "axios";
 import "./Homepage.css";
 import healthcare from "../../assets/healthcare.jpg"; // Adjust the path as necessary
@@ -52,10 +58,11 @@ const Homepage = () => {
           <h4>💊 Your Complete Health Companion</h4>
           <h1>Smart Healthcare at Your Fingertips</h1>
           <p>
-            Welcome to Health Care — your one-stop solution for intelligent medical support.
-            Purchase medicines, upload prescriptions, and get instant health insights powered
-            by AI. Describe your symptoms and receive tailored guidance, precautions, and expert tips.
-            Experience the future of healthcare, today.
+            Welcome to Health Care — your one-stop solution for intelligent
+            medical support. Purchase medicines, upload prescriptions, and get
+            instant health insights powered by AI. Describe your symptoms and
+            receive tailored guidance, precautions, and expert tips. Experience
+            the future of healthcare, today.
           </p>
           <button className="upload-btn" onClick={handleGetStartedClick}>
             Get Started
@@ -66,7 +73,8 @@ const Homepage = () => {
           <img src={healthcare} alt="Doctor typing" />
         </div>
       </main>
-      <Footer />
+      <Footer/>
+      
     </div>
   );
 };

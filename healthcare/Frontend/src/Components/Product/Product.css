@@ -475,3 +475,99 @@ body {
     }
 }
 
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 25px 20px;
+    width: 260px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 30px solid #7e35ab;
+    /* corner color */
+    border-left: 30px solid transparent;
+}
+
+.product-card img {
+    width: 100px;
+    height: 70px;
+    margin: 10px auto 20px;
+    object-fit: contain;
+    /* filter: grayscale(100%); */
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    background: transparent;
+    color: #8e3fc0;
+    border: 1px solid #6a1b9a;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: #6a1b9a;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #47616f;
+    /* soft bluish-grey tone */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f3e5f5;
+    /* হোভার শেড */
+}
+
+.product-card h5 {
+    font-size: 18px;
+    color: #7246a9;
+    /* ডার্ক পার্পল */
+    margin-bottom: 10px;
+    font-weight: 700;
+}

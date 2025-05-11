@@ -43,6 +43,9 @@ urlpatterns = [
     path("payments/", include("payments.urls")),  
      #for transactions app
     path('transactions/', include('transactions.urls')),  
+    
+    path('doctor/', include('doctor.urls')),
+
 ]
 
 

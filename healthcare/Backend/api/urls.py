@@ -44,10 +44,10 @@ urlpatterns = [
     path('categories/<int:pk>/delete/', delete_category, name='delete_category'),
 
     # Doctor APIs
-    path('doctors/', get_doctors, name='get_doctors'),
-    path('doctors/<int:category_id>/', get_doctors, name='get_category_doctors'),
-    path('doctors/create/', create_doctor, name='create_doctor'),
-    path('doctors/<int:pk>/delete/', delete_doctor, name='delete_doctor'),
+    #path('doctors/', get_doctors, name='get_doctors'),
+   # path('doctors/<int:category_id>/', get_doctors, name='get_category_doctors'),
+    # path('doctors/create/', create_doctor, name='create_doctor'),
+    # path('doctors/<int:pk>/delete/', delete_doctor, name='delete_doctor'),
     
     
     path('order/place/', place_order, name='place_order'),

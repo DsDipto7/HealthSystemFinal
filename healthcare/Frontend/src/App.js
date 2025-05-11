@@ -24,6 +24,7 @@ import PaymentPage from "./Components/PaymentHomepage/PaymentPage";
 import SuccessPage from "./Components/PaymentHomepage/SuccessPage";
 import FailurePage from "./Components/PaymentHomepage/FailurePage";
 import HealthChatbot from "./Components/Healthchatbot/Healthchatbot"; //for chatbot with flask llm
+import DoctorList from "./Components/DoctorList/DoctorList";
 
 // Import PrivateRoute
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/upload-prescription" element={<PrescriptionUpload />} />
           <Route path="/healthchatbot" element={<HealthChatbot />} />
           <Route path="/ambulance" element={<Ambulance />} />
+          <Route path="/doctor" element={<DoctorList />} />
 
           {/* for payment */}
           <Route path="/paymenthomepage" element={<PaymentHomepage />} />

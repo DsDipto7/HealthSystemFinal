@@ -96,6 +96,7 @@ export default function Navbar() {
               <Link to="/chat">Chat</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/ambulance">Ambulance</Link>
+              <Link to="/doctor">Doctor</Link>
               <Link to="/healthchatbot">Healthbot</Link>
             </div>
           )}

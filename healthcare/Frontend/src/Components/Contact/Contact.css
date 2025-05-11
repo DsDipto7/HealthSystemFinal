@@ -69,6 +69,7 @@ body {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 1rem;
+  
 }
 
 .contact-info {
@@ -277,4 +278,9 @@ body {
 
 .speech-btn:hover {
     opacity: 0.8;
+}
+
+.text {
+    color:#1556e2
+    /* blue color, change as needed */
 }
