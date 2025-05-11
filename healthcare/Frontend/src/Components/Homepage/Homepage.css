@@ -115,3 +115,11 @@ html, body {
   main.homepage-hero {
     flex: 1;
   }
+    .home {
+      width: 100%;
+      overflow-x: hidden;
+    }
+  
+    main.homepage-hero {
+      flex-wrap: wrap;
+    }
