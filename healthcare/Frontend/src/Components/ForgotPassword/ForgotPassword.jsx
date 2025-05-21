@@ -33,7 +33,7 @@ const ForgotPassword = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/forgot-password/",
+        "http://127.0.0.1:8000/api/accounts/forgot-password/",
         { email }
       );
       showToast(

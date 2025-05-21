@@ -1,106 +1,38 @@
-# from rest_framework.generics import GenericAPIView, RetrieveAPIView
-# from rest_framework.permissions import AllowAny, IsAuthenticated
-# from rest_framework_simplejwt.tokens import RefreshToken
-# from rest_framework.response import Response
-# from rest_framework import status
-# from django.core.mail import send_mail
-# from .serializers import UserRegistrationSerializer, UserLoginSerializer, CustomUserSerializer
-
-# # User Registration API
-# class UserRegistrationAPIView(GenericAPIView):
-#     permission_classes = (AllowAny,)
-#     serializer_class = UserRegistrationSerializer
-
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.save()
-#         token = RefreshToken.for_user(user)
-#         data = serializer.data
-#         data["tokens"] = {
-#             "refresh": str(token),
-#             "access": str(token.access_token),
-#         }
-#         return Response(data, status=status.HTTP_201_CREATED)
 
 
-# # User Login API
-# class UserLoginAPIView(GenericAPIView):
-#     permission_classes = (AllowAny,)
-#     serializer_class = UserLoginSerializer
+#with crud and image upload functionality
+# accounts/views.py
 
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         serializer = CustomUserSerializer(user)
-#         token = RefreshToken.for_user(user)
-#         data = serializer.data
-#         data["tokens"] = {
-#             "refresh": str(token),
-#             "access": str(token.access_token),
-#         }
-#         return Response(data, status=status.HTTP_200_OK)
-
-
-# # User Logout API
-# class UserLogoutAPIView(GenericAPIView):
-#     permission_classes = (IsAuthenticated,)
-
-#     def post(self, request, *args, **kwargs):
-#         try:
-#             refresh_token = request.data["refresh"]
-#             token = RefreshToken(refresh_token)
-#             token.blacklist()
-#             return Response({"detail": "Successfully logged out"}, status=status.HTTP_200_OK)
-#         except Exception as e:
-#             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
-# # User Info API
-# class UserInfoAPIView(RetrieveAPIView):
-#     permission_classes = (IsAuthenticated,)
-#     serializer_class = CustomUserSerializer
-
-#     def get_object(self):
-#         return self.request.user
-
-
-# # Email Service View
-# from rest_framework.views import APIView
-
-
-# class SendTestEmailView(APIView):
-#     def get(self, request):
-#         subject = "Test Email from Mailtrap"
-#         message = "This is a test email sent from Mailtrap using Django."
-#         from_email = "test@example.com"
-#         recipient_list = ["recipient@example.com"]
-
-#         send_mail(subject, message, from_email, recipient_list)
-#         return Response({"message": "Test email sent successfully!"}, status=status.HTTP_200_OK)
-
-
-
-
-#for reset password  
 import random
 from django.core.mail import send_mail
+from rest_framework import generics, permissions, status
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView, RetrieveAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework import status
-from accounts.models import CustomUser
-from .serializers import UserRegistrationSerializer, UserLoginSerializer, CustomUserSerializer
+from django.contrib.auth import authenticate
 
-# User Registration API
+from accounts.models import CustomUser
+from payments.models import Stripe_Payment
+
+from .serializers import (
+    UserRegistrationSerializer,
+    UserLoginSerializer,
+    UserSerializer,
+    UserSerializer,
+    UserUpdateSerializer,
+    
+)
+
+# -------------------------
+# AUTHENTICATION
+# -------------------------
+
 class UserRegistrationAPIView(GenericAPIView):
-    permission_classes = (AllowAny,)
+    permission_classes = [permissions.AllowAny]
     serializer_class = UserRegistrationSerializer
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -113,18 +45,16 @@ class UserRegistrationAPIView(GenericAPIView):
         return Response(data, status=status.HTTP_201_CREATED)
 
 
-# User Login API
 class UserLoginAPIView(GenericAPIView):
-    permission_classes = (AllowAny,)
+    permission_classes = [permissions.AllowAny]
     serializer_class = UserLoginSerializer
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data
-        serializer = CustomUserSerializer(user)
+        user = serializer.validated_data['user']  # ⬅ FIX: get 'user' from validated_data
+        data = UserSerializer(user).data  # Use correct serializer
         token = RefreshToken.for_user(user)
-        data = serializer.data
         data["tokens"] = {
             "refresh": str(token),
             "access": str(token.access_token),
@@ -132,31 +62,59 @@ class UserLoginAPIView(GenericAPIView):
         return Response(data, status=status.HTTP_200_OK)
 
 
-# User Logout API
-class UserLogoutAPIView(GenericAPIView):
-    permission_classes = (IsAuthenticated,)
 
-    def post(self, request, *args, **kwargs):
+class UserLogoutAPIView(GenericAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
         try:
-            refresh_token = request.data["refresh"]
+            refresh_token = request.data.get("refresh")
             token = RefreshToken(refresh_token)
             token.blacklist()
-            return Response({"detail": "Successfully logged out"}, status=status.HTTP_200_OK)
+            return Response({"detail": "Successfully logged out."}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-# User Info API
 class UserInfoAPIView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = CustomUserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UserSerializer
 
     def get_object(self):
         return self.request.user
 
-# Updated ForgotPasswordView
+# -------------------------
+# PROFILE MANAGEMENT
+# -------------------------
+
+class UserDetailView(generics.RetrieveAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+
+class UserUpdateView(generics.UpdateAPIView):
+    serializer_class = UserUpdateSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+
+class UserDeleteView(generics.DestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+# -------------------------
+# PASSWORD RESET WITH OTP
+# -------------------------
+
 class ForgotPasswordView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         email = request.data.get("email")
@@ -165,15 +123,14 @@ class ForgotPasswordView(APIView):
 
         try:
             user = CustomUser.objects.get(email=email)
-            otp = str(random.randint(100000, 999999))  # Generate OTP
+            otp = str(random.randint(100000, 999999))
             user.otp = otp
             user.save()
 
-            # Send OTP email
             send_mail(
                 "Password Reset OTP",
                 f"Your OTP for password reset is {otp}.",
-                "no-reply@example.com",  # Replace with your sender email
+                "no-reply@example.com",  # Replace with your email
                 [email],
                 fail_silently=False,
             )
@@ -182,9 +139,9 @@ class ForgotPasswordView(APIView):
         except CustomUser.DoesNotExist:
             return Response({"detail": "User with this email does not exist."}, status=status.HTTP_404_NOT_FOUND)
 
-# Updated VerifyOtpView
+
 class VerifyOtpView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         otp = request.data.get("otp")
@@ -200,45 +157,16 @@ class VerifyOtpView(APIView):
         except CustomUser.DoesNotExist:
             return Response({"detail": "Invalid OTP."}, status=status.HTTP_400_BAD_REQUEST)
 
-# Updated ResetPasswordView
-# Updated ResetPasswordView
+
 class ResetPasswordView(APIView):
-    permission_classes = (AllowAny,)
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         email = request.data.get("email")
         password = request.data.get("password")
 
-        if not email:
-            return Response({"detail": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
-
-        if not password:
-            return Response({"detail": "Password is required."}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            user = CustomUser.objects.get(email=email)
-
-            # Ensure OTP is already verified before resetting the password
-            if user.otp is not None:
-                return Response({"detail": "OTP not verified."}, status=status.HTTP_400_BAD_REQUEST)
-
-            # Reset the password
-            user.set_password(password)
-            user.save()
-
-            return Response({"message": "Password reset successfully."}, status=status.HTTP_200_OK)
-
-        except CustomUser.DoesNotExist:
-            return Response(
-                {"detail": "User with this email does not exist."},
-                status=status.HTTP_404_NOT_FOUND,
-            )
-
-    permission_classes = (AllowAny,)
-
-    def post(self, request):
-        email = request.data.get("email")
-        password = request.data.get("password")
+        if not email or not password:
+            return Response({"detail": "Email and new password are required."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             user = CustomUser.objects.get(email=email)
@@ -250,21 +178,22 @@ class ResetPasswordView(APIView):
             return Response({"message": "Password reset successfully."}, status=status.HTTP_200_OK)
 
         except CustomUser.DoesNotExist:
-            return Response(
-                {"detail": "User with this email does not exist."},
-                status=status.HTTP_404_NOT_FOUND,
-            )
+            return Response({"detail": "User with this email does not exist."}, status=status.HTTP_404_NOT_FOUND)
 
 
-# Send Test Email View
+
+# -------------------------
+# TEST EMAIL
+# -------------------------
+
 class SendTestEmailView(APIView):
-    permission_classes = (AllowAny,)
+    permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        subject = "Test Email from Mailtrap"
-        message = "This is a test email sent from Mailtrap using Django."
-        from_email = "test@example.com"
-        recipient_list = ["recipient@example.com"]
-
-        send_mail(subject, message, from_email, recipient_list)
+        send_mail(
+            "Test Email from Mailtrap",
+            "This is a test email sent from Mailtrap using Django.",
+            "test@example.com",
+            ["recipient@example.com"],
+        )
         return Response({"message": "Test email sent successfully!"}, status=status.HTTP_200_OK)

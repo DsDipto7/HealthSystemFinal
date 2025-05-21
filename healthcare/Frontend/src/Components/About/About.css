@@ -1,62 +1,73 @@
-.custom-about-page {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+/* Scoped About Section */
+.hs-about-section {
+  background-color: #f0f4f8;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-.about-title {
-    text-align: center;
-    margin-bottom: 40px;
+.hs-about-section .hs-about-title {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.about-title h1 {
-    font-size: 36px;
-    color: #2e7d32;
+.hs-about-section .hs-about-title h1 {
+  font-size: 36px;
+  color: #2e7d32;
 }
 
-.subtitle {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
+.hs-about-section .hs-about-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
 }
 
-.about-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+.hs-about-section .hs-about-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1200px;
+  
+  margin: 0 auto;
 }
 
-.about-text {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
+.hs-about-section .hs-about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.about-text h2 {
-    color: #388e3c;
-    margin-bottom: 15px;
+.hs-about-section .hs-about-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
 }
 
-.about-text p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 12px;
+.hs-about-section .hs-about-text h2 {
+  color: #1b5e20;
+  margin-bottom: 15px;
 }
 
-.about-image {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
-    text-align: center;
+.hs-about-section .hs-about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #444;
 }
 
-.about-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    border: 2px solid #4caf50;
+.hs-about-section .hs-about-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hs-about-section .hs-about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid #4caf50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

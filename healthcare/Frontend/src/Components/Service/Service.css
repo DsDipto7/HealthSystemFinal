@@ -1,114 +1,102 @@
-/* Overall Container */
-
+/* Root Service Container */
 .service-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    padding: 40px 20px;
-        text-align: center;
-        background-color: #f7f9fc;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
-/* Section Title */
+
+/* Title */
 .service-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #3a6073;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #3a6073;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 /* Grid Layout */
 .service-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-    width: 100%;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
 }
 
-/* Individual Card */
-.service-box {
-    /* background: #ffffff;
-    border: 1px solid #dce3e8;
-    border-radius: 12px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; */
-  
-            background: #f0f4f7;
-            /* হালকা ব্লু-গ্রে শেড, আরামদায়ক চোখে */
-            border: 1px solid #d3dee7;
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        
+/* Card */
+.service-card {
+  background: linear-gradient(135deg, #42a5f5, #66bb6a);
+  color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 25px 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
-.service-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon Circle */
-.icon-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #e8f0fe;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
+/* Icon Wrapper */
+.service-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.icon {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+.service-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
-/* Title */
-.box-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #083d77;
-    margin-bottom: 10px;
+/* Service Name */
+.service-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-/* Description */
-.box-desc {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    padding: 0 5px;
+/* Service Description */
+.service-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-/* Read More Button */
-.read-more-btn {
-    padding: 8px 20px;
-    background-color: transparent;
-    color: #083d77;
-    border: 1px solid #083d77;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: background 0.3s ease, color 0.3s ease;
+/* Button */
+.service-button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #42a5f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.read-more-btn:hover {
-    background-color: #083d77;
-    color: #fff;
+.service-button:hover {
+  background-color: #ffffff;
+  color: #66bb6a;
+}
+
+/* Loading Text */
+.loading-text {
+  font-size: 1rem;
+  font-style: italic;
+  color: #888;
 }
