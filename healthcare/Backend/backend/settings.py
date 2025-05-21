@@ -32,7 +32,14 @@ INSTALLED_APPS = [
     "payments",
     "doctor",
     # 'rest_framework',
-    "rest_framework_simplejwt"
+    "rest_framework_simplejwt",
+
+    #doctor login
+    'doctor_auth',
+    #for doctor self which he can crud all but his license and his email 
+    "doctor_profile",
+    
+  
   
    
 ]
@@ -63,10 +70,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",#for user
+        "rest_framework.authentication.SessionAuthentication",   #for doctors     # for doctors
+
     ),
 }
 
@@ -115,10 +125,15 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.CustomUser"
 
+
+# Ensure sessions are stored in database
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
+    "AUTH_HEADER_TYPES": ("Bearer",),
     "BLACKLIST_AFTER_ROTATION": True,
 }
 
@@ -133,3 +148,20 @@ EMAIL_PORT = config("MAILTRAP_PORT", default=2525)
 EMAIL_HOST_USER = config("MAILTRAP_USER", default="2dd3a67ae03729")
 EMAIL_HOST_PASSWORD = config("MAILTRAP_PASSWORD", default="f8c91d50273699")
 EMAIL_USE_TLS = True
+
+#for doctor login
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # or your React frontend domain
+]
+
+# Session
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'  # or 'None' if you're using HTTPS and cross-site
+SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+
+# CSRF
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SECURE = False  # Set to True in production

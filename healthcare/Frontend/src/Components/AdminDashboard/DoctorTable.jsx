@@ -1,3 +1,5 @@
+
+
 // import React, { useEffect, useState } from "react";
 // import axios from "axios";
 // import { ToastContainer, toast } from "react-toastify";
@@ -13,6 +15,7 @@
 //     email: "",
 //     college_name: "",
 //     photo: null,
+//     specialist: "", // added
 //   });
 //   const [editingDoctor, setEditingDoctor] = useState(null);
 
@@ -46,6 +49,7 @@
 //       email: "",
 //       college_name: "",
 //       photo: null,
+//       specialist: "", // reset specialist
 //     });
 //     setEditingDoctor(null);
 //   };
@@ -98,7 +102,8 @@
 //       qualification: doctor.qualification,
 //       email: doctor.email,
 //       college_name: doctor.college_name,
-//       photo: null, // new upload needed
+//       photo: null,
+//       specialist: doctor.specialist, // prefill specialist
 //     });
 //   };
 
@@ -116,6 +121,7 @@
 //             <th>Email</th>
 //             <th>College</th>
 //             <th>Qualification</th>
+//             <th>Specialist</th> {/* new column */}
 //             <th>Actions</th>
 //           </tr>
 //         </thead>
@@ -134,6 +140,7 @@
 //               <td>{doc.email}</td>
 //               <td>{doc.college_name}</td>
 //               <td>{doc.qualification}</td>
+//               <td>{doc.specialist}</td> {/* display specialist */}
 //               <td>
 //                 <button onClick={() => handleEditClick(doc)}>Edit</button>
 //                 <button onClick={() => handleDelete(doc.id)}>Delete</button>
@@ -181,6 +188,13 @@
 //           onChange={handleInputChange}
 //           placeholder="College Name"
 //         />
+//         <input
+//           type="text"
+//           name="specialist"
+//           value={newDoctor.specialist}
+//           onChange={handleInputChange}
+//           placeholder="Specialist (e.g., Cardiologist)"
+//         />
 //         <button onClick={handleAddOrEdit}>
 //           {editingDoctor ? "Update" : "Add Doctor"}
 //         </button>
@@ -189,6 +203,10 @@
 //   );
 // }
 
+
+
+
+//for  crud of varous things of a doctor 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -204,7 +222,11 @@ export default function DoctorTable() {
     email: "",
     college_name: "",
     photo: null,
-    specialist: "", // added
+    specialist: "",
+    bio: "",
+    experience: "",
+    consultation_fee: "",
+    available_time: ""
   });
   const [editingDoctor, setEditingDoctor] = useState(null);
 
@@ -238,7 +260,11 @@ export default function DoctorTable() {
       email: "",
       college_name: "",
       photo: null,
-      specialist: "", // reset specialist
+      specialist: "",
+      bio: "",
+      experience: "",
+      consultation_fee: "",
+      available_time: ""
     });
     setEditingDoctor(null);
   };
@@ -292,7 +318,11 @@ export default function DoctorTable() {
       email: doctor.email,
       college_name: doctor.college_name,
       photo: null,
-      specialist: doctor.specialist, // prefill specialist
+      specialist: doctor.specialist,
+      bio: doctor.bio,
+      experience: doctor.experience,
+      consultation_fee: doctor.consultation_fee,
+      available_time: doctor.available_time
     });
   };
 
@@ -310,7 +340,11 @@ export default function DoctorTable() {
             <th>Email</th>
             <th>College</th>
             <th>Qualification</th>
-            <th>Specialist</th> {/* new column */}
+            <th>Specialist</th>
+            <th>Experience</th>
+            <th>Consultation Fee</th>
+            <th>Available Time</th>
+            <th>Bio</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -329,7 +363,11 @@ export default function DoctorTable() {
               <td>{doc.email}</td>
               <td>{doc.college_name}</td>
               <td>{doc.qualification}</td>
-              <td>{doc.specialist}</td> {/* display specialist */}
+              <td>{doc.specialist}</td>
+              <td>{doc.experience} yrs</td>
+              <td>₹{doc.consultation_fee}</td>
+              <td>{doc.available_time}</td>
+              <td>{doc.bio}</td>
               <td>
                 <button onClick={() => handleEditClick(doc)}>Edit</button>
                 <button onClick={() => handleDelete(doc.id)}>Delete</button>
@@ -341,49 +379,17 @@ export default function DoctorTable() {
 
       <div className="doctor-form">
         <h3>{editingDoctor ? "Edit Doctor" : "Add Doctor"}</h3>
-        <input
-          type="text"
-          name="name"
-          value={newDoctor.name}
-          onChange={handleInputChange}
-          placeholder="Doctor Name"
-        />
+        <input type="text" name="name" value={newDoctor.name} onChange={handleInputChange} placeholder="Doctor Name" />
         <input type="file" name="photo" onChange={handleInputChange} />
-        <input
-          type="text"
-          name="license_number"
-          value={newDoctor.license_number}
-          onChange={handleInputChange}
-          placeholder="6-digit License"
-        />
-        <input
-          type="text"
-          name="qualification"
-          value={newDoctor.qualification}
-          onChange={handleInputChange}
-          placeholder="Qualification"
-        />
-        <input
-          type="email"
-          name="email"
-          value={newDoctor.email}
-          onChange={handleInputChange}
-          placeholder="Email"
-        />
-        <input
-          type="text"
-          name="college_name"
-          value={newDoctor.college_name}
-          onChange={handleInputChange}
-          placeholder="College Name"
-        />
-        <input
-          type="text"
-          name="specialist"
-          value={newDoctor.specialist}
-          onChange={handleInputChange}
-          placeholder="Specialist (e.g., Cardiologist)"
-        />
+        <input type="text" name="license_number" value={newDoctor.license_number} onChange={handleInputChange} placeholder="6-digit License" />
+        <input type="text" name="qualification" value={newDoctor.qualification} onChange={handleInputChange} placeholder="Qualification" />
+        <input type="email" name="email" value={newDoctor.email} onChange={handleInputChange} placeholder="Email" />
+        <input type="text" name="college_name" value={newDoctor.college_name} onChange={handleInputChange} placeholder="College Name" />
+        <input type="text" name="specialist" value={newDoctor.specialist} onChange={handleInputChange} placeholder="Specialist (e.g., Cardiologist)" />
+        <input type="number" name="experience" value={newDoctor.experience} onChange={handleInputChange} placeholder="Experience (years)" />
+        <input type="number" name="consultation_fee" value={newDoctor.consultation_fee} onChange={handleInputChange} placeholder="Consultation Fee (INR)" />
+        <input type="text" name="available_time" value={newDoctor.available_time} onChange={handleInputChange} placeholder="Available Time (e.g., 9:00 AM - 5:00 PM)" />
+        <textarea name="bio" value={newDoctor.bio} onChange={handleInputChange} placeholder="Bio" rows="3" />
         <button onClick={handleAddOrEdit}>
           {editingDoctor ? "Update" : "Add Doctor"}
         </button>

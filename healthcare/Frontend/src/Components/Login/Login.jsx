@@ -50,7 +50,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/login/",
+        "http://127.0.0.1:8000/api/accounts/login/",
         loginData
       );
       showToast("Login successful!", "success");
@@ -90,7 +90,7 @@ const Login = () => {
 
     setIsLoading(true);
     try {
-      await axios.post("http://127.0.0.1:8000/api/register/", registerData);
+      await axios.post("http://127.0.0.1:8000/api/accounts/register/", registerData);
       showToast("Registration successful! Redirecting to login...", "success");
       setTimeout(() => {
         setIsRightPanelActive(false);
@@ -174,6 +174,7 @@ const Login = () => {
               {isLoading ? "Loading..." : "Sign In"}
             </button>
             <Link to="/loginadmin" className="ghost">Are you an admin?</Link>
+            <Link to="/doctorlogin" className="ghost">Are you an doctor?</Link>
             <Link to="/forget_password" className="ghost">Forget Password?</Link>
           </form>
           {/* Link to admin login */}

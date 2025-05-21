@@ -106,7 +106,7 @@ const SetPassword = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/reset-password/",
+        "http://127.0.0.1:8000/api/accounts/reset-password/",
         { email, password: password1 }
       );
       showToast(response.data.message || "Password updated successfully!", "success");
