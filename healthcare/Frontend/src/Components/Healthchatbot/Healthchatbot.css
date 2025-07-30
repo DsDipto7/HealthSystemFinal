@@ -1,7 +1,7 @@
 /* Scoped styles for the HealthChatbot component */
 .health-chatbot {
     height: 100%;
-    margin: 0;
+    margin-top: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: white;
     color: #ffffff;

@@ -1,4 +1,4 @@
-/* Scoped Navbar Styles */
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 
-/* Logo Section */
+
 .navbar-logo-section {
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
   margin-bottom: 2px;
 }
 
-/* Navbar Links */
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -59,7 +59,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown Menu */
 .navbar-dropdown {
   position: relative;
 }
@@ -99,7 +98,7 @@
   color: #0a58ca;
 }
 
-/* Username and Button */
+
 .navbar-username {
   font-size: 20px;
   font-weight: 600;
@@ -122,4 +121,5 @@
 
 .navbar-btn:hover {
   background: #084298;
-}
+} 
+ 

@@ -1,4 +1,6 @@
 import "./App.css";
+ // ✅ Valid because it's inside src/
+
 import Homepage from "./Components/Homepage/Homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login/Login";

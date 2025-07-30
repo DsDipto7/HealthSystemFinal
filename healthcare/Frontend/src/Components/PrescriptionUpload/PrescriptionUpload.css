@@ -1,158 +1,95 @@
-/* .prescription-upload-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.upload-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.image-preview {
-    margin: 15px 0;
-    text-align: center;
-}
-
-.image-preview img {
-    max-width: 300px;
-    max-height: 300px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.upload-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-}
-
-.upload-btn:hover {
-    background-color: #45a049;
-}  */
-
-/* Container styling */
 .prescription-upload-container {
-    max-width: 750px;
-    margin: 40px auto;
+    max-width: 500px;
+    margin: 60px auto;
     padding: 30px;
-    background: linear-gradient(135deg, #ffffff, #f7f9fc);
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-.prescription-upload-container:hover {
-    transform: translateY(-3px);
-}
-
-/* Upload form */
-.upload-form {
-    background: white;
-    padding: 25px;
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.upload-form:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.prescription-upload-container h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
 }
 
-/* Form group */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* 🧠 reduced spacing */
+}
+
 .form-group {
-    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .form-group label {
-    display: block;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 6px;
+    color: #4a5568;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="file"] {
+    padding: 10px 14px;
+    font-size: 15px;
     border-radius: 8px;
-    font-size: 14px;
-    background: #fafafa;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #cbd5e0;
+    background-color: #f7fafc;
+    transition: 0.3s ease;
 }
 
 .form-group input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    border-color: #319795;
     outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(49, 151, 149, 0.3);
 }
 
-/* Image preview */
 .image-preview {
-    margin: 20px 0;
     text-align: center;
 }
 
 .image-preview img {
     max-width: 100%;
-    max-height: 250px;
-    border-radius: 10px;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    max-height: 220px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
 }
 
 .image-preview img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-/* Upload button */
 .upload-btn {
-    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    background-color: #319795;
     color: white;
-    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .upload-btn:hover {
-    background: linear-gradient(135deg, #357ABD, #2E6AB0);
-    box-shadow: 0 5px 12px rgba(53, 122, 189, 0.3);
-    transform: translateY(-2px);
+    background-color: #2c7a7b;
+    transform: translateY(-1px);
 }
 
 .upload-btn:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }

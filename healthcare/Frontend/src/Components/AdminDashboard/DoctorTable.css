@@ -30,6 +30,11 @@
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
 }
 
 .doctor-table th,
@@ -57,4 +62,13 @@
     background-color: #ef4444;
     /* red-500 */
     color: #fff;
+}
+
+.doctor-table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.doctor-table::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
 }

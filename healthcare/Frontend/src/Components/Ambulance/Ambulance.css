@@ -1,27 +1,20 @@
-/* Container */
 .ambulance-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
+    background-color: #f0f4f8;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
 }
 
-/* Title */
 .ambulance-title {
-    font-size: 28px;
+    text-align: center;
+    font-size: 32px;
     font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 30px;
 }
 
-/* Loading & Error Text */
 .loading-text,
 .error-text,
 .no-data-text {
@@ -32,62 +25,70 @@
     text-align: center;
 }
 
-/* Ambulance List */
+/* Card wrapper like hs-about-card */
+.ambulance-card-wrapper {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
 .ambulance-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 25px;
     margin-top: 20px;
 }
 
-/* Ambulance Card */
 .ambulance-card {
-    width: 280px;
+    flex: 1 1 280px;
+    max-width: 300px;
     padding: 20px;
-    background: linear-gradient(135deg, #4a90e2, #b76dd7);
-    color: #fff;
+    background-color: #f7fdf8;
+    border: 2px solid #c8e6c9;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #2e7d32;
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ambulance-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Ambulance Type */
 .ambulance-type {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 12px;
-    text-transform: capitalize;
 }
 
-/* Contact Info */
 .ambulance-contact {
     font-size: 16px;
     font-weight: 500;
     margin-top: 10px;
+    color: #388e3c;
 }
 
-/* Mobile Responsiveness */
+/* Responsive tweaks */
 @media (max-width: 1024px) {
     .ambulance-card {
-        width: 45%;
+        flex: 1 1 45%;
     }
 }
 
 @media (max-width: 768px) {
     .ambulance-card {
-        width: 90%;
+        flex: 1 1 90%;
     }
 
-    .ambulance-container {
+    .ambulance-card-wrapper {
         padding: 20px;
     }
 }
@@ -98,7 +99,7 @@
     }
 
     .ambulance-card {
-        width: 100%;
+        flex: 1 1 100%;
         padding: 15px;
     }
 }
