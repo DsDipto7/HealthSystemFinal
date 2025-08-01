@@ -93,9 +93,9 @@ export default function AmbulanceTable() {
   };
 
   return (
-    <div className="ambulance-container">
+    <div className="ambulance-containerr">
       <ToastContainer position="top-center" autoClose={2000} />
-      <h2 className="ambulance-title">Ambulance Management</h2>
+      <h2 className="ambulance-titlee">Ambulance Management</h2>
       <table className="ambulance-table">
         <thead>
           <tr>
@@ -157,3 +157,5 @@ export default function AmbulanceTable() {
     </div>
   );
 }
+
+

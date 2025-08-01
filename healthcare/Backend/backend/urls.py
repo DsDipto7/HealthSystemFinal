@@ -26,6 +26,7 @@ urlpatterns = [
     path("api/",include('api.urls')),
     path('api/', include('contact.urls')),
     path('ambulance/',include('ambulance.urls')),
+    path('ambulance-request/', include('ambulanceRequest.urls')),
 
     #doctor login
     path('doctor_auth/', include('doctor_auth.urls')),  #for doctor login

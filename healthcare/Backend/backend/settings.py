@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "stripe",
     "transactions",
     "payments",
+    "ambulanceRequest",
     "doctor",
     # 'rest_framework',
     "rest_framework_simplejwt",

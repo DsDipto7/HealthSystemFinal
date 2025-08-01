@@ -1,105 +1,135 @@
-.ambulance-container {
-    background-color: #f0f4f8;
-    padding: 40px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2c3e50;
-}
 
-.ambulance-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    color: #2c3e50;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-}
-
-.loading-text,
-.error-text,
-.no-data-text {
-    font-size: 18px;
-    font-weight: 600;
-    color: #e74c3c;
-    margin: 20px 0;
-    text-align: center;
-}
-
-/* Card wrapper like hs-about-card */
-.ambulance-card-wrapper {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+.ambulance-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.ambulance-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.ambulance-card {
-    flex: 1 1 280px;
-    max-width: 300px;
+    margin:  auto;
     padding: 20px;
-    background-color: #f7fdf8;
-    border: 2px solid #c8e6c9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    color: #2e7d32;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+.title {
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #2e7d32;
 }
 
-.ambulance-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 1000;
+    animation: fadein 0.3s ease;
 }
 
-.ambulance-type {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
+.toast.success {
+    background-color: #38a169;
+    color: #fff;
 }
 
-.ambulance-contact {
+.toast.error {
+    background-color: #e53e3e;
+    color: #fff;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.ambulance-container {
+    display: flex;
+    background: #f7fafc;
+    border: 1px solid #cbd5e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    
+}
+
+.ambulance-left,
+.ambulance-right {
+    flex: 1;
+    padding: 10px;
+}
+
+.ambulance-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.ambulance-info h2 {
+    color: #2e7d32;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ambulance-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.separator {
+    width: 1px;
+    background: #e2e8f0;
+}
+
+.ambulance-right h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+.ambulance-form input,
+.ambulance-form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.ambulance-form input:focus,
+.ambulance-form select:focus {
+    border-color: #2e7d32;
+}
+
+.ambulance-form .error {
+    color: red;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ambulance-form button {
+    width: 100%;
+    padding: 12px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
     font-size: 16px;
-    font-weight: 500;
-    margin-top: 10px;
-    color: #388e3c;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* Responsive tweaks */
-@media (max-width: 1024px) {
-    .ambulance-card {
-        flex: 1 1 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .ambulance-card {
-        flex: 1 1 90%;
-    }
-
-    .ambulance-card-wrapper {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .ambulance-title {
-        font-size: 24px;
-    }
-
-    .ambulance-card {
-        flex: 1 1 100%;
-        padding: 15px;
-    }
+.ambulance-form button:hover {
+    background: #2e7d32;
 }

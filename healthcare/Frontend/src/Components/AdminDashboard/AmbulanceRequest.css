@@ -1,0 +1,46 @@
+.ambulance-request-container {
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.ambulance-request-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0a4d68;
+}
+
+.ambulance-request-wrapper {
+    overflow-x: auto;
+}
+
+.ambulance-request-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.ambulance-request-table th,
+.ambulance-request-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.ambulance-request-table th {
+    background-color: #0a4d68;
+    color: white;
+    font-weight: 600;
+}
+
+.ambulance-request-loading,
+.ambulance-request-error,
+.ambulance-request-no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: red;
+}

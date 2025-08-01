@@ -168,6 +168,7 @@ import PrescriptionTable from "./PrescriptionTable";
 import TransactionsTable from "./TransactionsTable";
 import AmbulanceTable from "./AmbulanceTable";
 import DoctorTable from "./DoctorTable";
+import AmbulanceRequest from "./AmbulanceRequest";
 import "./Adminpage.css"; // Ensure case matches exactly
 // Import CSS file
 
@@ -293,6 +294,19 @@ export default function AdminPage() {
                   <span className="ms-1 d-none d-sm-inline">Doctor</span>
                 </button>
               </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link align-middle px-0 ${
+                    activeTab === "ambulancerequest" ? "text-primary" : ""
+                  }`}
+                  onClick={() => setActiveTab("ambulancerequest")}
+                >
+                  <i className="fs-4 bi-truck"></i>
+                  <span className="ms-1 d-none d-sm-inline">
+                    Ambulance Request
+                  </span>
+                </button>
+              </li>
             </ul>
 
             {/* Logout Button */}
@@ -313,6 +327,7 @@ export default function AdminPage() {
           {activeTab === "transactions" && <TransactionsTable />}
           {activeTab === "ambulance" && <AmbulanceTable />}
           {activeTab === "doctor" && <DoctorTable />}
+          {activeTab === "ambulancerequest" && <AmbulanceRequest />}
         </div>
       </div>
     </div>
