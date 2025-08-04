@@ -1,3 +1,96 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+.doctor-container {
+    padding: 40px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: #f9f9f9;
+}
+
+.doctor-title {
+    font-size: 32px;
+    text-align: center;
+    color: #4a148c;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.doctor-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+/* Doctor Card Styling */
+.doctor-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+    border-top: 6px solid #8e24aa;
+    word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    /* Top border highlight */
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background-color: #f3e5f5;
+}
+
+/* Doctor Image */
+.doctor-image {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Doctor Name */
+.doctor-name {
+    font-size: 20px;
+    color: #4a148c;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* View Profile Button */
+.view-profile-btn {
+    background: transparent;
+    color: #6a1b9a;
+    padding: 8px 16px;
+    border: 1.5px solid #6a1b9a;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #6a1b9a;
+    color: #fff;
+}
+
 /* Base styling */
 body {
     margin: 0;
@@ -118,3 +211,47 @@ body {
 .appointment-form button:hover {
     background-color: #6a1b9a;
 }
+
+.view-appointments-btn {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.view-appointments-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Scoped search bar styles */
+.doctor-container .doctor-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    gap: 10px;
+}
+
+.doctor-container .doctor-search-input {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 260px;
+    max-width: 100%;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.doctor-container .doctor-search-input:focus {
+    outline: none;
+    border-color: #4a148c;
+    box-shadow: 0 0 0 3px rgba(74, 20, 140, 0.2);
+}
+

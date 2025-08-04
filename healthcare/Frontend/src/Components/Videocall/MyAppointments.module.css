@@ -1,0 +1,68 @@
+/* MyAppointments.module.css */
+
+.appointmentsContainer {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.appointmentTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.appointmentTable th,
+.appointmentTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointmentTable th {
+  background-color: #8FBFFA;
+  color: #333;
+}
+
+.appointmentTable td {
+  background-color: #fefefe;
+}
+
+.appointmentTable tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.appointmentTable td button {
+  background-color: #FA948F;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.appointmentTable td button:hover {
+  background-color: #f7685c;
+}
+
+.appointmentTable td a {
+  background-color: #9AFA8F;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.appointmentTable td a:hover {
+  background-color: #77ec6f;
+}
