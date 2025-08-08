@@ -1,14 +1,16 @@
-
-//updated on 21/05/2025 that don't modify other files css   and protected
+//updated on 21/05/2025 that don't modify other files css and protected
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { JitsiMeeting } from "@jitsi/react-sdk";  // ✅ Import Jitsi SDK
+
 import styles from "./DoctorProfile.module.css";
 
 export default function DoctorProfile() {
   const navigate = useNavigate();
   const [doctor, setDoctor] = useState(null);
   const [formData, setFormData] = useState({});
+  const [showMeeting, setShowMeeting] = useState(false); // ✅ Track if meeting should open
 
   useEffect(() => {
     const doctorData = localStorage.getItem("doctor");
@@ -60,6 +62,10 @@ export default function DoctorProfile() {
     }
   };
 
+  const startCall = () => {
+    setShowMeeting(true);
+  };
+
   return (
     <div className={styles.doctorProfile}>
       <div className={styles.profileWrapper}>
@@ -72,89 +78,120 @@ export default function DoctorProfile() {
               className={styles.profilePhoto}
             />
           )}
-          <form
-            onSubmit={handleUpdate}
-            encType="multipart/form-data"
-            className={styles.form}
-          >
-            <label>Name:</label>
-            <input
-              name="name"
-              value={formData.name || ""}
-              onChange={handleChange}
+
+          {!showMeeting ? (
+            <>
+              <form
+                onSubmit={handleUpdate}
+                encType="multipart/form-data"
+                className={styles.form}
+              >
+                <label>Name:</label>
+                <input
+                  name="name"
+                  value={formData.name || ""}
+                  onChange={handleChange}
+                />
+                <small>* You can keep it or update it with proper validation</small>
+
+                <label>Profile Image:</label>
+                <input type="file" onChange={handleFileChange} />
+
+                <label>Specialist:</label>
+                <input
+                  name="specialist"
+                  value={formData.specialist || ""}
+                  onChange={handleChange}
+                />
+
+                <label>Qualification:</label>
+                <input
+                  name="qualification"
+                  value={formData.qualification || ""}
+                  onChange={handleChange}
+                />
+
+                <label>College Name:</label>
+                <input
+                  name="college_name"
+                  value={formData.college_name || ""}
+                  onChange={handleChange}
+                />
+
+                <label>Experience:</label>
+                <input
+                  name="experience"
+                  value={formData.experience || ""}
+                  onChange={handleChange}
+                />
+
+                <label>Consultation Fee:</label>
+                <input
+                  name="consultation_fee"
+                  value={formData.consultation_fee || ""}
+                  onChange={handleChange}
+                />
+
+                <label>Available Time:</label>
+                <input
+                  name="available_time"
+                  value={formData.available_time || ""}
+                  onChange={handleChange}
+                />
+
+                <label>Bio:</label>
+                <textarea
+                  name="bio"
+                  value={formData.bio || ""}
+                  onChange={handleChange}
+                ></textarea>
+
+                <button type="submit" className={styles.updateBtn}>
+                  Update Profile
+                </button>
+              </form>
+
+              <button
+                className={styles.videoCallBtn}
+                onClick={() => navigate("/doctor-appointments")}
+              >
+                View Patient Appointments
+              </button>
+
+              <button
+                className={styles.logoutBtn}
+                onClick={() => {
+                  localStorage.clear();
+                  navigate("/doctorlogin");
+                }}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <JitsiMeeting
+              domain="meet.jit.si"
+              roomName={`doctor_${doctor.doctor_id}_meeting`}
+              configOverwrite={{
+                startWithAudioMuted: true,
+                disableModeratorIndicator: true,
+                startScreenSharing: true,
+                enableEmailInStats: false,
+              }}
+              interfaceConfigOverwrite={{
+                DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
+              }}
+              userInfo={{
+                displayName: doctor.name,
+              }}
+              getIFrameRef={(iframeRef) => {
+                iframeRef.style.height = "600px";
+                iframeRef.style.width = "100%";
+              }}
             />
-            <small>* You can keep it or update it with proper validation</small>
-
-            <label>Profile Image:</label>
-            <input type="file" onChange={handleFileChange} />
-
-            <label>Specialist:</label>
-            <input
-              name="specialist"
-              value={formData.specialist || ""}
-              onChange={handleChange}
-            />
-
-            <label>Qualification:</label>
-            <input
-              name="qualification"
-              value={formData.qualification || ""}
-              onChange={handleChange}
-            />
-
-            <label>College Name:</label>
-            <input
-              name="college_name"
-              value={formData.college_name || ""}
-              onChange={handleChange}
-            />
-
-            <label>Experience:</label>
-            <input
-              name="experience"
-              value={formData.experience || ""}
-              onChange={handleChange}
-            />
-
-            <label>Consultation Fee:</label>
-            <input
-              name="consultation_fee"
-              value={formData.consultation_fee || ""}
-              onChange={handleChange}
-            />
-
-            <label>Available Time:</label>
-            <input
-              name="available_time"
-              value={formData.available_time || ""}
-              onChange={handleChange}
-            />
-
-            <label>Bio:</label>
-            <textarea
-              name="bio"
-              value={formData.bio || ""}
-              onChange={handleChange}
-            ></textarea>
-
-            <button type="submit" className={styles.updateBtn}>
-              Update Profile
-            </button>
-          </form>
-
-          <button
-            className={styles.logoutBtn}
-            onClick={() => {
-              localStorage.clear();
-              navigate("/doctorlogin");
-            }}
-          >
-            Logout
-          </button>
-        
+          )}
         </div>
       </div>
     </div>
   );
 }
-

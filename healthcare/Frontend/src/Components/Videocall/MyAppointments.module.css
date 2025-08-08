@@ -1,0 +1,240 @@
+/* 
+
+.appointmentsContaineeer {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.appointmentTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.appointmentTable th,
+.appointmentTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointmentTable th {
+  background-color: #8FBFFA;
+  color: #333;
+}
+
+.appointmentTable td {
+  background-color: #fefefe;
+}
+
+.appointmentTable tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.appointmentTable td button {
+  background-color: #FA948F;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.appointmentTable td button:hover {
+  background-color: #f7685c;
+}
+
+.appointmentTable td a {
+  background-color: #9AFA8F;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.appointmentTable td a:hover {
+  background-color: #77ec6f;
+} */
+/*  
+.myApptContainer {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myApptTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.myApptNoData {
+  color: #777;
+}
+
+.myApptTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.myApptTable th,
+.myApptTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.myApptTable th {
+  background-color: #8fbffa;
+  color: #333;
+}
+
+.myApptTable td {
+  background-color: #fefefe;
+}
+
+.myApptTable tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.myApptTable td button {
+  background-color: #fa948f;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.myApptTable td button:hover {
+  background-color: #f7685c;
+}
+
+.myApptTable td a {
+  background-color: #9afa8f;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.myApptTable td a:hover {
+  background-color: #77ec6f;
+} */
+.myApptContainer {
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myApptTitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 25px;
+}
+
+.myApptNoData {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  padding: 20px 0;
+}
+
+.myApptTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.myApptTable thead tr {
+  background: linear-gradient(90deg, #c8facc, #a3e4bc);
+  color: #1b5e20;
+}
+
+.myApptTable th {
+  padding: 12px 15px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.myApptTable tbody tr {
+  background: #f6fff7;
+  border: 1px solid #c8facc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.myApptTable tbody tr:hover {
+  background: #e0f7fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.myApptTable td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Join Call Button */
+.joinBtn {
+  background-color: #3B38A0;
+  /* Deep green */
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  /* Gap between Join and Delete */
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.joinBtn:hover {
+  background-color: #1b5e20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Delete Button */
+.deleteBtn {
+  background-color: #ff7043;
+  /* Soft orange */
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #e64a19;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
