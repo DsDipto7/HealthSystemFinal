@@ -1,5 +1,5 @@
-.container {
-  background-color: #ffffff; /* white background */
+/* .containers {
+  background-color: #ffffff; 
   padding: 20px;
   border-radius: 12px;
   max-width: 900px;
@@ -17,7 +17,7 @@ h2 {
 }
 
 button {
-  background-color: #9AFA8F; /* light green */
+  background-color: #9AFA8F; 
   border: none;
   color: #333333;
   padding: 8px 14px;
@@ -30,17 +30,17 @@ button {
 }
 
 button:hover {
-  background-color: #8FBFFA; /* light blue */
+  background-color: #8FBFFA; 
   color: #fff;
 }
 
 button:active {
-  background-color: #FA948F; /* light coral */
+  background-color: #FA948F; 
   color: #fff;
 }
 
 button:focus {
-  outline: 3px solid #FAEB8F; /* pale yellow focus */
+  outline: 3px solid #FAEB8F; 
   outline-offset: 2px;
 }
 
@@ -51,7 +51,7 @@ button:focus {
 }
 
 thead tr {
-  background-color: #FAEB8F; /* pale yellow header */
+  background-color: #FAEB8F; 
   color: #333333;
   font-weight: 700;
   text-align: left;
@@ -70,7 +70,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background-color: #e1f0ff; /* light hover blue */
+  background-color: #e1f0ff; 
 }
 
 tbody td {
@@ -106,4 +106,442 @@ tbody td {
 
 .videoWrapper button:hover {
   background-color: #d36e6a;
+} */
+/* 
+.docApptContainer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+.docApptTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8FBFFA;
+  font-weight: 700;
+}
+
+.docApptNoData {
+  text-align: center;
+  color: #666;
+}
+
+.docApptBackBtn {
+  background-color: #9AFA8F;
+  border: none;
+  color: #333333;
+  padding: 8px 14px;
+  margin: 0 4px 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.docApptBackBtn:hover {
+  background-color: #8FBFFA;
+  color: #fff;
+}
+
+.docApptBackBtn:active {
+  background-color: #FA948F;
+  color: #fff;
+}
+
+.docApptBackBtn:focus {
+  outline: 3px solid #FAEB8F;
+  outline-offset: 2px;
+}
+
+.docApptTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.docApptTable thead tr {
+  background-color: #FAEB8F;
+  color: #333333;
+  font-weight: 700;
+  text-align: left;
+}
+
+.docApptTable thead th {
+  padding: 12px 15px;
+  border-radius: 12px 12px 0 0;
+}
+
+.docApptTable tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+.docApptTable tbody tr:hover {
+  background-color: #e1f0ff;
+}
+
+.docApptTable tbody td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  color: #444;
+}
+
+.docApptBtn {
+  background-color: #9AFA8F;
+  border: none;
+  color: #333333;
+  padding: 8px 14px;
+  margin: 0 4px 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.docApptBtn:hover {
+  background-color: #8FBFFA;
+  color: #fff;
+}
+
+.docApptBtn:active {
+  background-color: #FA948F;
+  color: #fff;
+}
+
+.docApptBtn:focus {
+  outline: 3px solid #FAEB8F;
+  outline-offset: 2px;
+}
+
+.docApptVideoWrapper {
+  margin-top: 25px;
+  background-color: #FAEB8F;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.docApptVideoWrapper h3 {
+  margin-bottom: 15px;
+  color: #333333;
+  font-weight: 700;
+  text-align: center;
+}
+
+.docApptVideoWrapper button {
+  display: block;
+  margin: 15px auto 0;
+  background-color: #FA948F;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.docApptVideoWrapper button:hover {
+  background-color: #d36e6a;
+} */
+/*  
+.docApptContainer {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.docApptTitle {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e7d32;
+  
+}
+
+.docApptNoData {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  padding: 20px 0;
+}
+
+.docApptBackBtn {
+  background: #2e7d32;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.docApptBackBtn:hover {
+  background: #1b5e20;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.docApptTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.docApptTable thead tr {
+  background: linear-gradient(90deg, #c8facc, #a3e4bc);
+  color: #1b5e20;
+}
+
+.docApptTable thead th {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.docApptTable tbody tr {
+  background: #f6fff7;
+  border: 1px solid #c8facc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.docApptTable tbody tr:hover {
+  background: #e3fce8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.docApptTable tbody td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.docApptBtn {
+  background: #2e7d32;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 4px 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.docApptBtn:hover {
+  background: #1b5e20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.docApptBtn:active {
+  background: #145214;
+}
+
+.docApptVideoWrapper {
+  margin-top: 25px;
+  background-color: #f6fff7;
+  border: 1px solid #c8facc;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.docApptVideoWrapper h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+  font-weight: 700;
+  text-align: center;
+}
+
+.docApptVideoWrapper button {
+  display: block;
+  margin: 15px auto 0;
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.docApptVideoWrapper button:hover {
+  background-color: #c2185b;
+} */
+
+.docApptContainer {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.docApptTitle {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e7d32;
+  /* Deep green for consistency */
+}
+
+.docApptNoData {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  padding: 20px 0;
+}
+
+/* Back to Profile Button */
+.backBtn {
+  background: #2e7d32;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.backBtn:hover {
+  background: #3B38A0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Table Styles */
+.docApptTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.docApptTable thead tr {
+  background: linear-gradient(90deg, #c8facc, #a3e4bc);
+  color: #1b5e20;
+}
+
+.docApptTable thead th {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.docApptTable tbody tr {
+  background: #f6fff7;
+  border: 1px solid #c8facc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.docApptTable tbody tr:hover {
+  background: #e5e3f9;
+  box-shadow: 0 4px 12px rgba(98, 55, 55, 0.08);
+}
+
+.docApptTable tbody td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Common Button Style */
+.docApptBtn {
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 4px 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Specific Action Buttons */
+.acceptBtn {
+  background: #2e7d32;
+  /* Deep green */
+}
+
+.acceptBtn:hover {
+  background: #1b5e20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.declineBtn {
+  background: #e53935;
+  /* Red for decline */
+}
+
+.declineBtn:hover {
+  background: #c62828;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.startBtn {
+  background: #0288d1;
+  /* Blue for start call */
+}
+
+.startBtn:hover {
+  background: #01579b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Video Wrapper */
+.docApptVideoWrapper {
+  margin-top: 25px;
+  background-color: #f6fff7;
+  border: 1px solid #c8facc;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.docApptVideoWrapper h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+  font-weight: 700;
+  text-align: center;
+}
+
+.docApptVideoWrapper button {
+  display: block;
+  margin: 15px auto 0;
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.docApptVideoWrapper button:hover {
+  background-color: #c2185b;
 }
