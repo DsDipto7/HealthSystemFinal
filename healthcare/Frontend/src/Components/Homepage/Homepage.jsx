@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-// import About from "../About/About";
-// import Service from "../Service/Service";
-// import Contact from "../Contact/Contact";
-// import Product from "../Product/Product";
-// import Healthbot from "../Healthchatbot/Healthchatbot";
-// import Ambulance from "../Ambulance/Ambulance";
+import About from "../About/About";
+import Service from "../Service/Service";
+import Contact from "../Contact/Contact";
+import Product from "../Product/Product";
+import Healthbot from "../Healthchatbot/Healthchatbot";
+import Ambulance from "../Ambulance/Ambulance";
 import axios from "axios";
 import "./Homepage.css";
-import healthcare from "../../assets/slider-img.png"; // Adjust the path as necessary
+import healthcare from "../../assets/healthcare.jpg"; // Adjust the path as necessary
 import { DropdownContext } from "../../context/DropdownContext"; // Import the context
 
 const Homepage = () => {
@@ -80,4 +80,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-

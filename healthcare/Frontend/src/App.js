@@ -46,13 +46,6 @@ import DoctorProfile from "./Components/DoctorProfile/DoctorProfile"; //for doct
 
 
 
-// import VideoCallWrapper from "./Components/Videocall/VideoCallWrapper";
-import VideoCall from "./Components/Videocall/VideoCall";
-
-import MyAppointments from "./Components/Videocall/MyAppointments";
-
-import DoctorAppointments from "./Components/Videocall/DoctorAppointments";
-
 
 
 function App() {
@@ -111,21 +104,6 @@ function App() {
           <Route path="/admindashboard" element={<AdminDashboard />} />
 
           {/* Protected Route - Wrapped in PrivateRoute */}
-
-
-
-
-           
-         {/* My Appointments Route */}
-         <Route path="/my-appointments" element={<MyAppointments />} />
-
-         {/* VideoCallWrapper component to handle dynamic room names and display names */}
-       {/* <Route path="/video-call/:doctorId" element={<VideoCallWrapper />} /> */}
-      
-        <Route path="/video-call/:roomName" element={<VideoCall />} />
-
-
-        <Route path="/doctor-appointments" element={<DoctorAppointments />} />
         </Routes>
       </Router>
     </DropdownProvider>

@@ -177,28 +177,3 @@
     height: 180px;
   }
 }
-
-.videoCallBtn {
-  margin-top: 15px;
-  background-color: #10b981; /* Green button */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 14px 28px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-transform: uppercase;
-}
-
-.videoCallBtn:hover {
-  background-color: #059669; /* Darker green on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-}
-
-
-
-
