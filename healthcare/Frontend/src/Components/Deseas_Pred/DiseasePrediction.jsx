@@ -425,3 +425,5 @@ const DiseasePrediction = () => {
 };
 
 export default DiseasePrediction;
+
+

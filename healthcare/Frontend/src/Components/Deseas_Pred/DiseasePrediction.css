@@ -189,3 +189,10 @@
     padding: 12px 6px;
   }
 }
+/* Error message style */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}

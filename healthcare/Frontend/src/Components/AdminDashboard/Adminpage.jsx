@@ -227,17 +227,17 @@ export default function AdminPage() {
                   <span className="ms-1 d-none d-sm-inline">Contacts</span>
                 </button>
               </li>
-              <li className="nav-item">
-                <button
-                  className={`nav-link align-middle px-0 ${
-                    activeTab === "services" ? "text-primary" : ""
-                  }`}
-                  onClick={() => setActiveTab("services")}
-                >
-                  <i className="fs-4 bi-briefcase"></i>
-                  <span className="ms-1 d-none d-sm-inline">Services</span>
-                </button>
-              </li>
+            {/* <li className="nav-item">
+              <button
+                className={`nav-link align-middle px-0 ${
+                  activeTab === "services" ? "text-primary" : ""
+                }`}
+                onClick={() => setActiveTab("services")}
+              >
+                <i className="fs-4 bi-briefcase"></i>
+                <span className="ms-1 d-none d-sm-inline">Services</span>
+              </button>
+            </li> */}
               <li className="nav-item">
                 <button
                   className={`nav-link align-middle px-0 ${
@@ -249,7 +249,7 @@ export default function AdminPage() {
                   <span className="ms-1 d-none d-sm-inline">Prescriptions</span>
                 </button>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <button
                   className={`nav-link align-middle px-0 ${
                     activeTab === "categories" ? "text-primary" : ""
@@ -259,7 +259,7 @@ export default function AdminPage() {
                   <i className="fs-4 bi-tags"></i>
                   <span className="ms-1 d-none d-sm-inline">Categories</span>
                 </button>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <button
                   className={`nav-link align-middle px-0 ${

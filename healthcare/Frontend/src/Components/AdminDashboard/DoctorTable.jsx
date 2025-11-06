@@ -158,7 +158,7 @@ export default function DoctorTable() {
               <td>{doc.qualification}</td>
               <td>{doc.specialist}</td>
               <td>{doc.experience} yrs</td>
-              <td>₹{doc.consultation_fee}</td>
+              <td>{doc.consultation_fee}</td>
               <td>{doc.available_time}</td>
               <td>{doc.bio}</td>
               <td>

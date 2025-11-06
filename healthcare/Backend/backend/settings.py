@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'doctor_auth',
     #for doctor self which he can crud all but his license and his email 
     "doctor_profile",
+    'Appointment',
     
   
   
